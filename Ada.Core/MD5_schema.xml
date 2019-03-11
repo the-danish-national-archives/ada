@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<schemas>
+  <schema>
+    <fileName>archiveIndex.xsd</fileName>
+    <md5>173A55066BF25975EB2D4E3770A65EA5</md5>
+    <version>0.9.4</version>
+  </schema>
+  <schema>
+    <fileName>contextDocumentationIndex.xsd</fileName>
+    <md5>198d67e3d8a8515b4a0aee5320e7926c</md5>
+    <version>0.9.4</version>
+  </schema>
+  <schema>
+    <fileName>docIndex.xsd</fileName>
+    <md5>C4EFBB6AF4339F242E974FE0256EF6FB</md5>
+    <version>0.8.2</version>
+  </schema>
+  <schema>
+    <fileName>fileIndex.xsd</fileName>
+    <md5>FCDCF147DA6ED778B7F8B2A95BC28371</md5>
+    <version>0.9.5</version>
+  </schema>
+  <schema>
+    <fileName>tableIndex.xsd</fileName>
+    <md5>9661F1CDC7B36EC85DB088A42D2E125F</md5>
+    <version>0.9.2</version>
+  </schema>
+  <schema>
+    <fileName>XMLSchema.xsd</fileName>
+    <md5>94ED1A93CE3147D01BCB2FC1126255ED</md5>
+    <version>1.0</version>
+  </schema>
+</schemas>

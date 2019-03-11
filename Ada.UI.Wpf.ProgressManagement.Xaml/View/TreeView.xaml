@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.ProgressManagement.Views.View.TreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ignore="http://www.galasoft.ch/ignore"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:viewModel1="clr-namespace:Ada.UI.Wpf.ProgressManagement.ViewModel;assembly=Ada.UI.Wpf.ProgressManagement"
+             xmlns:view="clr-namespace:Ada.UI.Wpf.ProgressManagement.Views.View"
+
+             mc:Ignorable="d ignore"
+             d:DataContext="{Binding ProgressManagementViewModel, Source={StaticResource Locator}}"
+             d:DesignWidth="204.952" d:DesignHeight="318.565"
+
+
+             lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+             lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.ProgressManagement.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <HierarchicalDataTemplate x:Key="CheckTreeItemTemplate" ItemsSource="{Binding SubItems}"
+                                      DataType="{x:Type viewModel1:CheckTreeItem}">
+
+                <StackPanel Orientation="Horizontal">
+                    <!--                        <CheckBox IsChecked="{Binding ToBeRun}" IsThreeState="True" />-->
+
+                    <Canvas Background="Transparent" Width="16">
+                        <Image Height="14" Width="14"
+                               Source="{Binding Status.Status, Converter={StaticResource CheckTreeStatusToIcon}}" />
+                        <Image Height="14" Width="14"
+                               gif:ImageBehavior.AnimatedSource="../Resources/runningGif.gif"
+                               Visibility="{Binding Status.IsRunning, Converter={x:Static utils:BooleanToVisibilityConverter.AsCollapsed}}" />
+                    </Canvas>
+                    <TextBlock Text="{Binding ShortDesc}" VerticalAlignment="Center" />
+
+                </StackPanel>
+
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <!--        <TextBlock DockPanel.Dock="Top">Above</TextBlock>-->
+        <!--        <TextBlock DockPanel.Dock="Top" Text="{Binding}"></TextBlock>-->
+        <TreeView
+            ItemsSource="{Binding CheckTree, Delay=200}"
+            x:Name="Tree"
+
+            SelectedValuePath="{Binding SelectedField}"
+
+            utils:TreeViewOpenBehavior.TreeViewOpen="{Binding SelectedField}"
+            ItemTemplate="{StaticResource CheckTreeItemTemplate}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsExpanded" Value="{Binding PreExpanded}" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <i:InvokeCommandAction Command="{Binding SetSelectedCommand}"
+                                           CommandParameter="{Binding ElementName=Tree,Path=SelectedItem}" />
+                </i:EventTrigger>
+
+            </i:Interaction.Triggers>
+        </TreeView>
+        <ToggleButton x:Name="LegendButton" Height="20" Width="20" Content="?"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top" />
+        <Popup PlacementTarget="{x:Reference LegendButton}">
+            <Popup.Style>
+                <Style TargetType="Popup">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Source={x:Reference LegendButton}, Path=IsChecked}" Value="True">
+                            <DataTrigger.Setters>
+                                <Setter Property="IsOpen" Value="True" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Popup.Style>
+            <Border BorderThickness="2" BorderBrush="Bisque" Background="White">
+
+                <view:CheckStatusLegend Margin="4" />
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

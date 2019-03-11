@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<siardDiark xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://www.sa.dk/xmlns/diark/1.0"
+            xsi:schemaLocation="http://www.sa.dk/xmlns/diark/1.0 ../Schemas/standard/tableIndex.xsd">
+  <version>1.0</version>
+  <dbName>EksempelDatabase</dbName>
+  <databaseProduct>Microsoft SQL server</databaseProduct>
+  <tables>
+    <table>
+      <name>DOKTABEL</name>
+      <folder>table1</folder>
+      <description>Tabel der indeholder oplysninger om dokumenter</description>
+      <columns>
+        <column>
+          <name>DokumentID</name>
+          <columnID>c1</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>Entydigt ID til dokument</description>
+          <functionalDescription>Dokumentidentifikation</functionalDescription>
+        </column>
+        <column>
+          <name>Dato</name>
+          <columnID>c2</columnID>
+          <type>NATIONAL CHARACTER VARYING(8)</type>
+          <typeOriginal>nvarchar(8)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Oprettelsesdato</description>
+          <functionalDescription>Dokumentdato</functionalDescription>
+        </column>
+        <column>
+          <name>Dokumenttitel</name>
+          <columnID>c3</columnID>
+          <type>NATIONAL CHARACTER VARYING(50)</type>
+          <typeOriginal>nvarchar(50)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Dokumenttitel</description>
+          <functionalDescription>Dokumenttitel</functionalDescription>
+        </column>
+        <column>
+          <name>SagsID</name>
+          <columnID>c4</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>FN, henvisning til sag som dokumentet er tilknyttet </description>
+        </column>
+        <column>
+          <name>Lagringsform</name>
+          <columnID>c5</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>Angiver dokumentets lagringsform, jf. bek. 1007, bilag 6, figur 6.5</description>
+          <functionalDescription>Lagringsform</functionalDescription>
+        </column>
+      </columns>
+      <primaryKey>
+        <name>PK_DOKTABEL</name>
+        <column>DokumentID</column>
+      </primaryKey>
+      <foreignKeys>
+        <foreignKey>
+          <name>FK_DOK_SAG</name>
+          <referencedTable>SAG</referencedTable>
+          <reference>
+            <column>SagsID</column>
+            <referenced>SagsID</referenced>
+          </reference>
+        </foreignKey>
+      </foreignKeys>
+      <rows>22</rows>
+    </table>
+    <table>
+      <name>INDKSTRM</name>
+      <folder>table2</folder>
+      <description>Emneordsliste, tabel med journalplan</description>
+      <columns>
+        <column>
+          <name>IndekstermID</name>
+          <columnID>c1</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>Sagsgruppe og samtidig primærnøgle for tabel</description>
+        </column>
+        <column>
+          <name>FaderID</name>
+          <columnID>c2</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Overordnet journalnummer</description>
+        </column>
+        <column>
+          <name>Indeksterm</name>
+          <columnID>c3</columnID>
+          <type>NATIONAL CHARACTER VARYING(50)</type>
+          <typeOriginal>nvarchar(50)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Emneord, beskrivelse af journalgruppe</description>
+        </column>
+      </columns>
+      <primaryKey>
+        <name>PK_INDKSTRM</name>
+        <column>IndekstermID</column>
+      </primaryKey>
+      <rows>13</rows>
+    </table>
+    <table>
+      <name>M2MTABEL</name>
+      <folder>table3</folder>
+      <description>Mellemtabel der opløser mange til mange relation mellem SAG og INDKSTRM</description>
+      <columns>
+        <column>
+          <name>ID</name>
+          <columnID>c1</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>ID</description>
+        </column>
+        <column>
+          <name>IndekstermID</name>
+          <columnID>c2</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>FN til INDKSTRM</description>
+        </column>
+        <column>
+          <name>SagsID</name>
+          <columnID>c3</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>FN til SAG</description>
+        </column>
+      </columns>
+      <primaryKey>
+        <name>PK_M2MTABEL</name>
+        <column>ID</column>
+      </primaryKey>
+      <foreignKeys>
+        <foreignKey>
+          <name>FK_IndeksTerm_M2MTABEL</name>
+          <referencedTable>INDKSTRM</referencedTable>
+          <reference>
+            <column>IndekstermID</column>
+            <referenced>IndekstermID</referenced>
+          </reference>
+        </foreignKey>
+        <foreignKey>
+          <name>FK_SAG_M2MTABEL</name>
+          <referencedTable>SAG</referencedTable>
+          <reference>
+            <column>SagsID</column>
+            <referenced>SagsID</referenced>
+          </reference>
+        </foreignKey>
+      </foreignKeys>
+      <rows>5</rows>
+    </table>
+    <table>
+      <name>SAG</name>
+      <folder>table4</folder>
+      <description>Tabel der indeholder oplysninger om sager</description>
+      <columns>
+        <column>
+          <name>SagsID</name>
+          <columnID>c1</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>SagsID</description>
+          <functionalDescription>Sagsidentifikation</functionalDescription>
+        </column>
+        <column>
+          <name>Dato</name>
+          <columnID>c2</columnID>
+          <type>TIMESTAMP</type>
+          <typeOriginal>datetime</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Dato for sagsoprettelse</description>
+        </column>
+        <column>
+          <name>Sagsnr</name>
+          <columnID>c3</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Sagens løbenummer</description>
+        </column>
+        <column>
+          <name>Sagstittel</name>
+          <columnID>c4</columnID>
+          <type>NATIONAL CHARACTER VARYING(50)</type>
+          <typeOriginal>nvarchar(50)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Beskrivende titel for sag</description>
+          <functionalDescription>Sagstitel</functionalDescription>
+        </column>
+        <column>
+          <name>SagsbehandlerID</name>
+          <columnID>c5</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>FN til SAGSBEH</description>
+        </column>
+        <column>
+          <name>Kontor</name>
+          <columnID>c6</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Det kontor som har oprettet sagen</description>
+        </column>
+        <column>
+          <name>Dokantal</name>
+          <columnID>c7</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Antal dokumenter som er registreret på sagen</description>
+        </column>
+      </columns>
+      <primaryKey>
+        <name>PK_SAG</name>
+        <column>SagsID</column>
+      </primaryKey>
+      <foreignKeys>
+        <foreignKey>
+          <name>FK_Sagsbehandler_sag</name>
+          <referencedTable>SAGSBEH</referencedTable>
+          <reference>
+            <column>SagsbehandlerID</column>
+            <referenced>SagsbehandlerID</referenced>
+          </reference>
+        </foreignKey>
+      </foreignKeys>
+      <rows>11</rows>
+    </table>
+    <table>
+      <name>SAGSBEH</name>
+      <folder>table5</folder>
+      <description>Tabel der indeholder informationer om sagsbehandlere</description>
+      <columns>
+        <column>
+          <name>SagsbehandlerID</name>
+          <columnID>c1</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>false</nullable>
+          <description>Tabellens primærnøgle</description>
+        </column>
+        <column>
+          <name>Navn</name>
+          <columnID>c2</columnID>
+          <type>NATIONAL CHARACTER VARYING(25)</type>
+          <typeOriginal>nvarchar(25)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Sagsbehandlerens navn</description>
+        </column>
+        <column>
+          <name>Initialer</name>
+          <columnID>c3</columnID>
+          <type>NATIONAL CHARACTER VARYING(4)</type>
+          <typeOriginal>nvarchar(4)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Sagsbehandlerens initialer</description>
+        </column>
+        <column>
+          <name>Kontor</name>
+          <columnID>c4</columnID>
+          <type>INTEGER</type>
+          <typeOriginal>bigint</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Det kontor, sagsbehandleren er tilknyttet</description>
+        </column>
+        <column>
+          <name>Tlf</name>
+          <columnID>c5</columnID>
+          <type>NATIONAL CHARACTER VARYING(10)</type>
+          <typeOriginal>nvarchar(10)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Telefonnummer til sagsbehandler</description>
+        </column>
+        <column>
+          <name>Epost</name>
+          <columnID>c6</columnID>
+          <type>NATIONAL CHARACTER VARYING(40)</type>
+          <typeOriginal>nvarchar(40)</typeOriginal>
+          <defaultValue />
+          <nullable>true</nullable>
+          <description>Sagsbehandlerens epost-adresse</description>
+        </column>
+      </columns>
+      <primaryKey>
+        <name>PK_SAGSBEH</name>
+        <column>SagsbehandlerID</column>
+      </primaryKey>
+      <rows>7</rows>
+    </table>
+  </tables>
+  <views>
+    <view>
+      <name>AV_Find_Sag</name>
+      <queryOriginal>SELECT * FROM sag WHERE sagstittel LIKE '%ørsted%'</queryOriginal>
+      <description>SQL forespørgsel, der finder en eller flere sager ud fra et søgeudtryk </description>
+    </view>
+    <view>
+      <name>AV_Dokumenter_til_sag</name>
+      <queryOriginal>SELECT d.Dokumenttitel, d.Dato, d.DokumentID FROM sag s, DOKTABEL d WHERE s.SagsID = d.SagsID and s.sagsid = 2</queryOriginal>
+      <description>SQL forespørgsel, der finder alle dokumenter til en bestemt sag</description>
+    </view>
+    <view>
+      <name>AV_SelectAlleSager_fra_sagsbehandler</name>
+      <queryOriginal>select * from sag a, sagsbeh b WHERE a.sagsbehandlerID = b.sagsbehandlerID and b.navn like '%sørensen%'</queryOriginal>
+      <description>SQL forespørgsel, der finder alle sager der er tilknyttet en bestemt sagsbehandler</description>
+    </view>
+    <view>
+      <name>AV_SelectAlleSager_fra_journalgruppe</name>
+      <queryOriginal>select  a.SagsID,a.Dato, a.SagsbehandlerID, a.Kontor, a.Dokantal  from sag a, m2mtabel b, indkstrm c where a.SagsID = b.SagsID and c.Indeksterm like '%forsk%'</queryOriginal>
+      <description>SQL forespørgsel, der fremfinder alle sager, der tilhører en journalgruppe</description>
+    </view>
+    <view>
+      <name>Show_sags_behandlere</name>
+      <queryOriginal>CREATE VIEW  Show_sags_behandlere AS SELECT * FROMsagsbeh</queryOriginal>
+      <description>View, der returnerer en liste over sagsbehandlere</description>
+    </view>
+  </views>
+</siardDiark>

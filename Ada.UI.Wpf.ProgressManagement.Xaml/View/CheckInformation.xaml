@@ -1,0 +1,269 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.ProgressManagement.Views.View.CheckInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:dtvViewModel="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.ViewModel;assembly=Ada.UI.Wpf.TableIndexViewer"
+             xmlns:util="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.Util;assembly=Ada.UI.Wpf.TableIndexViewer"
+             xmlns:viewModel1="clr-namespace:Ada.UI.Wpf.ProgressManagement.ViewModel;assembly=Ada.UI.Wpf.ProgressManagement"
+             xmlns:resultsList="clr-namespace:Ra.Common.Wpf.ResultsList;assembly=Ra.Common.Wpf"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=viewModel1:CheckTreeItem, IsDesignTimeCreatable=False}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.ProgressManagement.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="OpenWithMenuTemplate">
+                <TextBlock
+                    d:DataContext="{d:DesignInstance Type=viewModel1:LogEntryOpenWithViewModel, IsDesignTimeCreatable=False}"
+                    Text="{Binding Text}" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+
+            <StackPanel.Style>
+                <Style TargetType="{x:Type StackPanel}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding}" Value="{x:Null}">
+                            <DataTrigger.Setters>
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock Text="{lex:Loc Name}" Margin="2,0" IsManipulationEnabled="True" />
+                <TextBox Text="{Binding ShortDesc}" Style="{StaticResource MarkableLabel}" />
+
+            </StackPanel>
+            <!--        <Separator/>-->
+            <!--        <StackPanel Orientation="Horizontal">-->
+            <!---->
+            <!--            <TextBlock Text="Forudsætninger:" Margin="2,0"/>-->
+            <!--            <ListView ItemsSource="{Binding Requirements}">-->
+            <!--                <ListView.ItemTemplate>-->
+            <!--                    <DataTemplate DataType="{x:Type viewModel:CheckTreeItem}">-->
+            <!--                        <StackPanel>-->
+            <!--                            <TextBlock Text="{Binding Name}"/>-->
+            <!--                        </StackPanel>-->
+            <!--                    </DataTemplate>-->
+            <!--                </ListView.ItemTemplate>-->
+            <!--            </ListView>-->
+            <!---->
+            <!--        </StackPanel>-->
+            <Separator />
+            <StackPanel>
+                <TextBlock Text="{lex:Loc Description}" Margin="2,0" />
+                <TextBox Text="{Binding Desc}" Style="{StaticResource MarkableLabel}" />
+            </StackPanel>
+            <Separator />
+        </StackPanel>
+        <Grid>
+
+            <DataGrid DockPanel.Dock="Top" x:Name="DataGrid" ItemsSource="{Binding Notifications.List}" Margin="0,4"
+                      utils:HideColumns.Enableds="True"
+                      CanUserAddRows="false">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction
+                            Command="{x:Static viewModel1:ProgressManagementViewModel.SetSelectedCommandRouted}"
+                            CommandParameter="{Binding ElementName=DataGrid,  Path=SelectedItem, Converter={x:Static utils:FieldFromDataRowViewConverter.Instance}, ConverterParameter={x:Static viewModel1:NotificationsListViewModel.OwnerColumnText}}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Resources>
+                            <utils:FieldFromDataRowViewConverter x:Key="OwnerFieldFromDataRowViewConverter"
+                                                                 Parameter="{x:Static viewModel1:NotificationsListViewModel.OwnerColumnText}" />
+                            <utils:ReadPropertyConverter x:Key="IsErrorPropertyReader" Parameter="IsError" />
+                            <utils:FieldFromDataRowViewConverter x:Key="OpenWithListFieldFromDataRowViewConverter"
+                                                                 Parameter="{x:Static viewModel1:NotificationsListViewModel.OpenWithListColumnText}" />
+                            <utils:ReadPropertyConverter x:Key="CountPropertyReader" Parameter="Count" />
+                        </Style.Resources>
+                        <Setter Property="BorderThickness">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <!-- Set column background color-->
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <Brush>White</Brush>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="ContextMenu">
+                            <Setter.Value>
+                                <ContextMenu
+                                    d:DataContext="{d:DesignInstance Type=viewModel1:LogEntryOpenWithViewModel, IsDesignTimeCreatable=False}">
+                                    <ContextMenu.Resources>
+
+                                        <Style TargetType="MenuItem">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding LogEntryOpenWithViewModelType}"
+                                                             Value="AvQuery">
+                                                    <Setter Property="Command"
+                                                            Value="{x:Static dtvViewModel:QuerySelectorViewModel.SetQueryCommand}" />
+                                                    <Setter Property="CommandParameter" Value="{Binding Value}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding LogEntryOpenWithViewModelType}"
+                                                             Value="TestQuery">
+                                                    <Setter Property="Command"
+                                                            Value="{x:Static resultsList:ResultsListViewModel.SetQueryCommand}" />
+                                                    <Setter Property="CommandParameter" Value="{Binding }" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding LogEntryOpenWithViewModelType}"
+                                                             Value="List">
+                                                    <Setter Property="Command"
+                                                            Value="{x:Static resultsList:ResultsListViewModel.SetQueryCommand}" />
+                                                    <Setter Property="CommandParameter" Value="{Binding }" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContextMenu.Resources>
+                                    <ContextMenu.ItemsSource>
+                                        <Binding>
+                                            <Binding.Converter>
+                                                <utils:ValueConverterGroup>
+                                                    <StaticResource
+                                                        ResourceKey="OpenWithListFieldFromDataRowViewConverter" />
+                                                </utils:ValueConverterGroup>
+                                            </Binding.Converter>
+                                        </Binding>
+
+                                    </ContextMenu.ItemsSource>
+                                    <ContextMenu.ItemTemplate>
+                                        <StaticResource ResourceKey="OpenWithMenuTemplate" />
+                                    </ContextMenu.ItemTemplate>
+                                </ContextMenu>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <DataTrigger Value="True">
+                                <DataTrigger.Binding>
+                                    <Binding>
+                                        <Binding.Converter>
+                                            <utils:ValueConverterGroup>
+                                                <StaticResource ResourceKey="OwnerFieldFromDataRowViewConverter" />
+                                                <StaticResource ResourceKey="IsErrorPropertyReader" />
+                                            </utils:ValueConverterGroup>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </DataTrigger.Binding>
+                                <Setter Property="Background"
+                                        Value="LightPink" />
+                            </DataTrigger>
+                            <DataTrigger Value="0">
+                                <DataTrigger.Binding>
+                                    <Binding>
+                                        <Binding.Converter>
+                                            <utils:ValueConverterGroup>
+                                                <StaticResource ResourceKey="OpenWithListFieldFromDataRowViewConverter" />
+                                                <StaticResource ResourceKey="CountPropertyReader" />
+                                            </utils:ValueConverterGroup>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </DataTrigger.Binding>
+                                <Setter Property="ContextMenu" Value="{x:Null}" />
+                            </DataTrigger>
+                            <DataTrigger Value="{x:Null}">
+                                <DataTrigger.Binding>
+                                    <Binding>
+                                        <Binding.Converter>
+                                            <utils:ValueConverterGroup>
+                                                <StaticResource ResourceKey="OpenWithListFieldFromDataRowViewConverter" />
+                                                <StaticResource ResourceKey="CountPropertyReader" />
+                                            </utils:ValueConverterGroup>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </DataTrigger.Binding>
+                                <Setter Property="ContextMenu" Value="{x:Null}" />
+                            </DataTrigger>
+
+                            <DataTrigger Value="True">
+                                <DataTrigger.Binding>
+                                    <Binding
+                                        Converter="{x:Static util:DataGridCellExtendedPropertiesConverter.Instance}"
+                                        ConverterParameter="{x:Static viewModel1:NotificationsListViewModel.IsImageProperty}"
+                                        RelativeSource="{RelativeSource Self}" />
+                                </DataTrigger.Binding>
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Image
+                                                    Source="/Ada.UI.Wpf.ProgressManagement.Views;component/Resources/right-click-of-the-mouse-icon.png"
+                                                    Height="12">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Style.Triggers>
+                                                                <DataTrigger
+                                                                    Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridCell}}, Converter={x:Static utils:GetDataGridCellValueConverter.Instance}}"
+                                                                    Value="False">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                            </StackPanel>
+                                        </DataTemplate>
+
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static DataGrid.FocusBorderBrushKey}}" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true" />
+                                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background"
+                                        Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}" />
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}" />
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>
+
+
+            <Button Content="{lex:Loc ToCsv}"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    CommandParameter="{Binding Notifications.List}">
+                <Button.Command>
+                    <utils:TableToCsv AutoOpen="True" />
+                </Button.Command>
+            </Button>
+        </Grid>
+    </DockPanel>
+
+</UserControl>

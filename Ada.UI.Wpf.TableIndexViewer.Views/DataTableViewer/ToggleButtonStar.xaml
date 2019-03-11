@@ -1,0 +1,42 @@
+﻿<ToggleButton x:Class="Ada.UI.Wpf.TableIndexViewer.Views.DataTableViewer.ToggleButtonStar"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              mc:Ignorable="d"
+              d:DesignHeight="300" d:DesignWidth="300">
+    <ToggleButton.Resources>
+        <Geometry x:Key="Star">M 85 0 L 115 55 L 170 66 L 130 110 L 137 170 L 85 140 L 32 170 L 42 110 L  0 65 L 60 55 Z</Geometry>
+    </ToggleButton.Resources>
+
+    <ToggleButton.Template>
+        <ControlTemplate TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Border Background="Transparent">
+                    <Path HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Stroke="Black"
+                          StrokeThickness="1">
+                        <Path.Data>
+                            <DynamicResource ResourceKey="Star" />
+                        </Path.Data>
+                        <Path.Style>
+                            <Style>
+                                <Setter Property="Path.Fill"
+                                        Value="{x:Null}" />
+                                <Style.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsChecked, 
+                                    RelativeSource={RelativeSource AncestorType=
+                                    {x:Type ToggleButton}}}"
+                                        Value="True">
+                                        <Setter Property="Path.Fill"
+                                                Value="Yellow" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+                    </Path>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </ToggleButton.Template>
+</ToggleButton>

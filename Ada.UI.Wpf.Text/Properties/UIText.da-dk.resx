@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CheckTreeItemStatus_Error" xml:space="preserve">
+    <value>Fejlet</value>
+  </data>
+  <data name="CheckTreeItemStatus_Finished" xml:space="preserve">
+    <value>Færdig</value>
+  </data>
+  <data name="CheckTreeItemStatus_Info" xml:space="preserve">
+    <value>Indeholder indformation</value>
+  </data>
+  <data name="CheckTreeItemStatus_Running" xml:space="preserve">
+    <value>Kører</value>
+  </data>
+  <data name="CheckTreeItemStatus_Skipped" xml:space="preserve">
+    <value>Skipped</value>
+  </data>
+  <data name="CheckTreeItemStatus_ToBeDone" xml:space="preserve">
+    <value>Ikke kørt</value>
+  </data>
+  <data name="CheckTreeItemStatus_Unknown" xml:space="preserve">
+    <value>Test ikke implementeret</value>
+  </data>
+  <data name="CheckTreeItemStatus_Warning" xml:space="preserve">
+    <value>Ukendt fejl</value>
+  </data>
+  <data name="ColumnId" xml:space="preserve">
+    <value>cX</value>
+  </data>
+  <data name="ColumnName" xml:space="preserve">
+    <value>Kolonnenavn</value>
+  </data>
+  <data name="ColumnsFilter" xml:space="preserve">
+    <value>Kolonnefilter</value>
+  </data>
+  <data name="ColumnsFilterEnum_All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="ColumnsFilterEnum_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="ColumnsFilterEnum_PrimaryAndForeignKeys" xml:space="preserve">
+    <value>Primær- og fremmednøgler</value>
+  </data>
+  <data name="ColumnsFilterEnum_PrimaryKeys" xml:space="preserve">
+    <value>Primærnøgler</value>
+  </data>
+  <data name="Databases" xml:space="preserve">
+    <value>Databaser</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>Defaultværdi</value>
+  </data>
+  <data name="DeleteGraphTable" xml:space="preserve">
+    <value>Slet</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beskrivelse</value>
+  </data>
+  <data name="EdgeRoutingAlgorithm" xml:space="preserve">
+    <value>Kant udlægning</value>
+  </data>
+  <data name="EdgeRoutingEnum_Bundling" xml:space="preserve">
+    <value>Bundling</value>
+  </data>
+  <data name="EdgeRoutingEnum_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="EdgeRoutingEnum_PathFinder" xml:space="preserve">
+    <value>Path Finder</value>
+  </data>
+  <data name="EdgeRoutingEnum_SimpleER" xml:space="preserve">
+    <value>Simpel</value>
+  </data>
+  <data name="ERGraph" xml:space="preserve">
+    <value>ER Diagram</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Kør</value>
+  </data>
+  <data name="ExecuteToolTip" xml:space="preserve">
+    <value>Genvejstast: ctrl+enter eller F5</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Falskt</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtre</value>
+  </data>
+  <data name="FindPaths" xml:space="preserve">
+    <value>Find relationer</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Mappe</value>
+  </data>
+  <data name="FollowReference" xml:space="preserve">
+    <value>Følg reference</value>
+  </data>
+  <data name="ForeignKeyName" xml:space="preserve">
+    <value>Fremmednøglenavn</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Afleveret" xml:space="preserve">
+    <value>Afleveret</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Afsender_modtager" xml:space="preserve">
+    <value>Afsender modtager</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Digital_signatur" xml:space="preserve">
+    <value>Digital signatur</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Dokumentdato" xml:space="preserve">
+    <value>Dokumentdato</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Dokumentidentifikation" xml:space="preserve">
+    <value>Dokumentidentifikation</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Dokumenttitel" xml:space="preserve">
+    <value>Dokumenttitel</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_FORM" xml:space="preserve">
+    <value>FORM</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Kassation" xml:space="preserve">
+    <value>Kassation</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Lagringsform" xml:space="preserve">
+    <value>Lagringsform</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Myndighedsidentifikation" xml:space="preserve">
+    <value>Myndighedsidentifikation</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Sagsidentifikation" xml:space="preserve">
+    <value>Sagsidentifikation</value>
+  </data>
+  <data name="FunctionalDescriptionEnum_Sagstitel" xml:space="preserve">
+    <value>Sagstitel</value>
+  </data>
+  <data name="FunctionalDescriptions" xml:space="preserve">
+    <value>Kolonnefunktion(er)</value>
+  </data>
+  <data name="FunctionalDescriptions1" xml:space="preserve">
+    <value>Kolonnefunktion(er)</value>
+  </data>
+  <data name="GraphControlEnum_Edge" xml:space="preserve">
+    <value>Kanter</value>
+  </data>
+  <data name="GraphControlEnum_Vertex" xml:space="preserve">
+    <value>Noder</value>
+  </data>
+  <data name="GraphControlEnum_VertexAndEdge" xml:space="preserve">
+    <value>Noder og kanter</value>
+  </data>
+  <data name="HeaderLayout" xml:space="preserve">
+    <value>Udlægning</value>
+  </data>
+  <data name="HeaderVisuals" xml:space="preserve">
+    <value>Grafik</value>
+  </data>
+  <data name="HighLightedComponents" xml:space="preserve">
+    <value>Fremhævede komponenter</value>
+  </data>
+  <data name="HighlightedEdges" xml:space="preserve">
+    <value>Fremhævede kanter</value>
+  </data>
+  <data name="HighlightEdgesEnum_All" xml:space="preserve">
+    <value>Ind og ud</value>
+  </data>
+  <data name="HighlightEdgesEnum_In" xml:space="preserve">
+    <value>Ind</value>
+  </data>
+  <data name="HighlightEdgesEnum_Out" xml:space="preserve">
+    <value>Ud</value>
+  </data>
+  <data name="HighlightEnabled" xml:space="preserve">
+    <value>Fremhævning aktiveret</value>
+  </data>
+  <data name="IsEdgeLabelAligned" xml:space="preserve">
+    <value>Roter kantetiketter</value>
+  </data>
+  <data name="IsEdgeLabelsShown" xml:space="preserve">
+    <value>Vis kantetiketter</value>
+  </data>
+  <data name="IsPrimaryKey" xml:space="preserve">
+    <value>Primærnøgle</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Danish</value>
+  </data>
+  <data name="LayoutAlgorithm" xml:space="preserve">
+    <value>Udlægning</value>
+  </data>
+  <data name="LayoutBoundedFR" xml:space="preserve">
+    <value>Bounded FR</value>
+  </data>
+  <data name="LayoutCircular" xml:space="preserve">
+    <value>Circular</value>
+  </data>
+  <data name="LayoutCompoundFDP" xml:space="preserve">
+    <value>Compound FDP</value>
+  </data>
+  <data name="LayoutEfficientSugiyama" xml:space="preserve">
+    <value>Efficient Sugiyama</value>
+  </data>
+  <data name="LayoutFR" xml:space="preserve">
+    <value>FR (Fruchterman-Reingold)</value>
+  </data>
+  <data name="LayoutISOM" xml:space="preserve">
+    <value>ISOM</value>
+  </data>
+  <data name="LayoutKK" xml:space="preserve">
+    <value>KK</value>
+  </data>
+  <data name="LayoutLinLog" xml:space="preserve">
+    <value>Lin Log</value>
+  </data>
+  <data name="LayoutSimpleRandom" xml:space="preserve">
+    <value>Simple Random</value>
+  </data>
+  <data name="LayoutSugiyama" xml:space="preserve">
+    <value>Sugiyama</value>
+  </data>
+  <data name="LayoutTree" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="MainWindowTitle" xml:space="preserve">
+    <value>MainWindow</value>
+  </data>
+  <data name="MaxRowsReached" xml:space="preserve">
+    <value>Der kan være flere felter end vist</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Navn</value>
+  </data>
+  <data name="Names" xml:space="preserve">
+    <value>Navne</value>
+  </data>
+  <data name="NewEmptyGraph" xml:space="preserve">
+    <value>Ny tom graf</value>
+  </data>
+  <data name="NewFullGraph" xml:space="preserve">
+    <value>Ny fuld graf</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="NoSuggestions" xml:space="preserve">
+    <value>Ingen forslag tilgængelige</value>
+  </data>
+  <data name="Nullable" xml:space="preserve">
+    <value>Nullable</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>af</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Åben</value>
+  </data>
+  <data name="OpenAvId" xml:space="preserve">
+    <value>Åben AvId</value>
+  </data>
+  <data name="OpenFolderSelection" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="OverlapRemovalEnum_FSA" xml:space="preserve">
+    <value>FSA</value>
+  </data>
+  <data name="OverlapRemovalEnum_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="OverlapRemovalEnum_OneWayFSA" xml:space="preserve">
+    <value>Envejs FSA</value>
+  </data>
+  <data name="OverlapRemovingAlgorithm" xml:space="preserve">
+    <value>Fjernelse af overlap</value>
+  </data>
+  <data name="PrimaryKeyName" xml:space="preserve">
+    <value>Primærnøglenavn</value>
+  </data>
+  <data name="Query" xml:space="preserve">
+    <value>Forespørgsel</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>Beskrivelse</value>
+  </data>
+  <data name="QueryFavorites" xml:space="preserve">
+    <value>Favoriter</value>
+  </data>
+  <data name="QueryFromAV" xml:space="preserve">
+    <value>Fra aflevering</value>
+  </data>
+  <data name="QueryLatest" xml:space="preserve">
+    <value>Seneste</value>
+  </data>
+  <data name="QueryName" xml:space="preserve">
+    <value>Navn</value>
+  </data>
+  <data name="RedrawLayout" xml:space="preserve">
+    <value>Gentegn graf</value>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>reference</value>
+  </data>
+  <data name="referenced" xml:space="preserve">
+    <value>referenced</value>
+  </data>
+  <data name="referencedTable" xml:space="preserve">
+    <value>referencedTable</value>
+  </data>
+  <data name="RemoveItemsFromGraph" xml:space="preserve">
+    <value>Fjern tabeller fra graf</value>
+  </data>
+  <data name="Rows" xml:space="preserve">
+    <value>Rækker</value>
+  </data>
+  <data name="RowsStartAt" xml:space="preserve">
+    <value>Start fra række</value>
+  </data>
+  <data name="RowsToShow" xml:space="preserve">
+    <value>Antal række vist</value>
+  </data>
+  <data name="RunAvQuery" xml:space="preserve">
+    <value>Kør forspørgsel</value>
+  </data>
+  <data name="RunTest" xml:space="preserve">
+    <value>Kør test</value>
+  </data>
+  <data name="SelectConnected" xml:space="preserve">
+    <value>Vælg forbundede</value>
+  </data>
+  <data name="SelectedEdges" xml:space="preserve">
+    <value>Markerede kanter vist</value>
+  </data>
+  <data name="SelectedEdgesEnum_All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="SelectedEdgesEnum_In" xml:space="preserve">
+    <value>Ind</value>
+  </data>
+  <data name="SelectedEdgesEnum_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="SelectedEdgesEnum_Out" xml:space="preserve">
+    <value>Ud</value>
+  </data>
+  <data name="SelectedRelationEnum_Any" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="SelectedRelationEnum_Neighbors" xml:space="preserve">
+    <value>Naboer</value>
+  </data>
+  <data name="SelectedRelationEnum_NeighborsIn" xml:space="preserve">
+    <value>Naboer (ind)</value>
+  </data>
+  <data name="SelectedRelationEnum_NeighborsOut" xml:space="preserve">
+    <value>Naboer (ud)</value>
+  </data>
+  <data name="SelectedRelationEnum_Only" xml:space="preserve">
+    <value>Kun markerede</value>
+  </data>
+  <data name="SelectedRelations" xml:space="preserve">
+    <value>Relationers vs markerede</value>
+  </data>
+  <data name="ShowInPropertiesWindow" xml:space="preserve">
+    <value>Vis i egenskabsvindue</value>
+  </data>
+  <data name="ShowInQueryTable" xml:space="preserve">
+    <value>Vis som forespørgsel</value>
+  </data>
+  <data name="ShowReport" xml:space="preserve">
+    <value>Vis report</value>
+  </data>
+  <data name="SQLQueryTooltip" xml:space="preserve">
+    <value>Brug ctrl+mellemrum for tabel og kolonne forslag</value>
+  </data>
+  <data name="Tablename" xml:space="preserve">
+    <value>Tabelnavn</value>
+  </data>
+  <data name="TableViewer" xml:space="preserve">
+    <value>Tabelviser</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>til</value>
+  </data>
+  <data name="True" xml:space="preserve">
+    <value>Sandt</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="TypeOriginal" xml:space="preserve">
+    <value>Original type</value>
+  </data>
+  <data name="UpdateDrives" xml:space="preserve">
+    <value>Opdater</value>
+  </data>
+  <data name="UseCurves" xml:space="preserve">
+    <value>Bløde kanter</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Værktøjer</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Marker alle</value>
+  </data>
+  <data name="DeleteCurrent" xml:space="preserve">
+    <value>Slet midlertidige database og luk Ada</value>
+  </data>
+  <data name="DeleteDatabases" xml:space="preserve">
+    <value>Slet databaser</value>
+  </data>
+  <data name="DeleteDatabasesTitle" xml:space="preserve">
+    <value>Sletning af arbejdsdatabaser</value>
+  </data>
+  <data name="SetValue" xml:space="preserve">
+    <value>Sæt</value>
+  </data>
+  <data name="UnableToDelete" xml:space="preserve">
+    <value>Det lykkedes ikke at slette all filer.</value>
+  </data>
+  <data name="WillDelete" xml:space="preserve">
+    <value>Følgende databaser slettes:</value>
+  </data>
+  <data name="RunTestQuery" xml:space="preserve">
+    <value>Forespørg resultater</value>
+  </data>
+  <data name="ListResults" xml:space="preserve">
+    <value>List resultater</value>
+  </data>
+  <data name="WillDeleteF" xml:space="preserve">
+    <value>Følgende databaser slettes:
+{0} ({1})</value>
+  </data>
+  <data name="SeverityType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="SeverityTypeError" xml:space="preserve">
+    <value>Fejl</value>
+  </data>
+  <data name="SeverityTypeInfo" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="TakeScreenShot" xml:space="preserve">
+    <value>Åben som png</value>
+  </data>
+  <data name="ToCsv" xml:space="preserve">
+    <value>Åben CSV</value>
+  </data>
+</root>

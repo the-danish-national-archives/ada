@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.TableIndexViewer.DataTableViewer.SqlEditor.SqlEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="121" d:DesignWidth="376"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:sqlEditor="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.SqlEditor"
+             ToolTip="{lex:Loc SQLQueryTooltip}">
+    <!--             GotFocus="UserControl_GotFocus" GotKeyboardFocus="UserControl_GotKeyboardFocus"-->
+    <!--             Focusable="True" -->
+    <!--             FocusManager.IsFocusScope="True" -->
+    <!--             FocusManager.FocusedElement="{Binding ElementName=TextBox, Mode=OneTime}"-->
+    <!--        <StackPanel>-->
+    <!--            <StackPanel.Resources>-->
+    <!--                <Style x:Key="FontStyle" TargetType="TextBlock">-->
+    <!--                    <Setter Property="FontFamily" Value="Arial"></Setter>-->
+    <!--                </Style>-->
+    <!--            </StackPanel.Resources>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="Thin">1testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="Light">3testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="Normal">4testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="Medium">5testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="DemiBold">6testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="Bold">7testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="ExtraBold">8testText</TextBlock>-->
+    <!--            <TextBlock Style="{StaticResource FontStyle}" FontWeight="ExtraBlack">95testText</TextBlock>-->
+    <!--            <Button Template="{DynamicResource EmptySuggestionsTemplate}"></Button>-->
+    <!--        </StackPanel>-->
+
+    <UserControl.InputBindings>
+        <KeyBinding
+            Command="{Binding OpenSuggestionsCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type sqlEditor:SqlEditor}}}"
+            Gesture="CTRL+SPACE" />
+    </UserControl.InputBindings>
+    <i:Interaction.Triggers>
+        <i:EventTrigger
+            SourceObject="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+            EventName="GotKeyboardFocus">
+            <i:InvokeCommandAction Command="utils:SetFocusCommand.Instance"
+                                   CommandParameter="{Binding Source={x:Reference textEditor}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="2" />
+        </Style>
+    </UserControl.Style>
+    <DockPanel>
+
+        <avalonEdit:TextEditor
+            Background="{Binding Background, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type sqlEditor:SqlEditor}}}"
+            Name="textEditor"
+            FontSize="10pt"
+            FontFamily="Consolas"
+            HorizontalScrollBarVisibility="{Binding HorizontalScrollBarVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type sqlEditor:SqlEditor}}}"
+            VerticalScrollBarVisibility="{Binding VerticalScrollBarVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type sqlEditor:SqlEditor}}}"
+
+            WordWrap="True"
+            Foreground="Purple" />
+        <!--            FontFamily="Arial"-->
+    </DockPanel>
+</UserControl>

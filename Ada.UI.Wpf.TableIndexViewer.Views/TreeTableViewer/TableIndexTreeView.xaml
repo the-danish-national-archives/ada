@@ -1,0 +1,198 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.TableIndexViewer.Views.TreeTableViewer.TableIndexTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:tableIndex="clr-namespace:Ra.DomainEntities.TableIndex;assembly=Ra.DomainEntities"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:interactivity="clr-namespace:Ra.Common.Wpf.Utils.Interactivity;assembly=Ra.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:topVm="clr-namespace:Ada.UI.Wpf.TableIndexViewer.ViewModel;assembly=Ada.UI.Wpf.TableIndexViewer"
+             xmlns:viewModel="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.ViewModel;assembly=Ada.UI.Wpf.TableIndexViewer"
+             xmlns:fieldCheaterViewer="clr-namespace:Ada.UI.Wpf.TableIndexViewer.Views.FieldCheaterViewer"
+             xmlns:vm="clr-namespace:Ada.UI.Wpf.TableIndexViewer.TreeTableViewer.ViewModel;assembly=Ada.UI.Wpf.TableIndexViewer"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Name="Me"
+             d:DataContext="{Binding Path=TreeTableViewModel, 
+                    Source={d:DesignInstance {x:Type topVm:TableIndexViewerViewModel}, 
+                    IsDesignTimeCreatable=False}}"
+
+
+             lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+             lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.TableIndexViewer.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Window x:Key="ColumnCheatWindow"
+                    WindowStyle="ToolWindow" Title="{Binding Title}" Height="300" Width="300">
+                <i:Interaction.Behaviors>
+                    <interactivity:HideNotCloseBehavior />
+                </i:Interaction.Behaviors>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <fieldCheaterViewer:FieldCheaterViewer />
+                </ScrollViewer>
+            </Window>
+
+            <HierarchicalDataTemplate x:Key="ColumnDataTemplate" DataType="{x:Type tableIndex:Column}">
+                <StackPanel>
+                    <TextBlock Text="{Binding Type}" />
+                </StackPanel>
+            </HierarchicalDataTemplate>
+            <HierarchicalDataTemplate x:Key="ReferenceDataTemplate"
+                                      DataType="{x:Type tableIndex:Reference}">
+                <StackPanel>
+                    <TextBlock>
+                        <Run Text="(FK) " /><Run Text=" " /><Run Text="{Binding ParentConstraint.ReferencedTable}" />
+                        <Run Text=" " /><Run Text="(" /><Run Text=" " /><Run Text="{Binding Referenced}" />
+                        <Run Text=" " /><Run Text=")" />
+                    </TextBlock>
+                </StackPanel>
+            </HierarchicalDataTemplate>
+            <ContextMenu x:Key="ElementContextMenu"
+                         lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+                         lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text">
+                <MenuItem Header="{lex:Loc ShowInQueryTable}"
+                          Command="{x:Static viewModel:QuerySelectorViewModel.SetQueryCommand}"
+                          CommandParameter="{Binding}" />
+                <MenuItem Header="{lex:Loc FollowReference}"
+                          Command="{Binding Path=DataContext.SetSelectedTabelCommand, 
+                                Source={x:Reference Me}}"
+                          CommandParameter="{Binding ParentConstraint.ReferencedTable}" />
+                <MenuItem Header="{lex:Loc ShowInPropertiesWindow}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:EventTrigger.Actions>
+                                <interactivity:SetPropertyAction PropertyName="Owner"
+                                                                 TargetObject="{StaticResource ColumnCheatWindow}"
+                                                                 PropertyValue="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}, Mode=OneWay}" />
+                                <interactivity:SetPropertyAction PropertyName="DataContext"
+                                                                 TargetObject="{StaticResource ColumnCheatWindow}"
+                                                                 PropertyValue="{Binding Converter={StaticResource ToFieldCheaterConverter}, Mode=OneWay}" />
+                                <ei:CallMethodAction MethodName="Show"
+                                                     TargetObject="{StaticResource ColumnCheatWindow}" />
+                                <interactivity:SetPropertyAction PropertyName="Topmost"
+                                                                 TargetObject="{StaticResource ColumnCheatWindow}"
+                                                                 PropertyValue="{StaticResource BoolTrue}" />
+                            </i:EventTrigger.Actions>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </MenuItem>
+            </ContextMenu>
+            <FrameworkElement x:Key="TreeViewItemProxy" />
+            <Style x:Key="ContainerStyleForTable" TargetType="{x:Type TreeViewItem}">
+                <Setter Property="ToolTipService.ShowDuration" Value="60000" />
+                <Setter Property="ToolTip" Value="{StaticResource FieldCheaterToolTip}" />
+                <Setter Property="ContextMenu" Value="{StaticResource ElementContextMenu}" />
+                <EventSetter Event="MouseMove" Handler="TablesTreeItem_OnMouseMove" />
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter
+                    Property="vm:FilterAttachedBehavior.Filter"
+                    Value="{Binding DataContext.TableFilterViewModel, ElementName=Me}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding DataContext.TableFilterViewModel.Filter, ElementName=Me}"
+                                 Value="{x:Null}">
+                        <Setter Property="IsExpanded" Value="False" />
+                    </DataTrigger>
+                    <Trigger Property="vm:FilterAttachedBehavior.IsMarked" Value="True">
+                        <Setter Property="IsExpanded" Value="False" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="ContainerStyleForOthers" BasedOn="{StaticResource ContainerStyleForTable}"
+                   TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="False" />
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <TreeView
+            x:Name="TablesTreeView"
+            ItemsSource="{Binding ListedTables, Delay=200}"
+            utils:ExpandCollapseBehavior.ExpandCommand="{Binding ExpandCommand}"
+            utils:ExpandCollapseBehavior.CollapseCommand="{Binding CollapseCommand}"
+
+            utils:TreeViewOpenBehavior.TreeViewOpen="{Binding SelectedField}"
+            ItemContainerStyle="{StaticResource ContainerStyleForTable}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <i:InvokeCommandAction Command="{Binding SetSelectedCommand}"
+                                           CommandParameter="{Binding ElementName=TablesTreeView,Path=SelectedItem}" />
+                    <interactivity:SetPropertyAction PropertyName="DataContext"
+                                                     TargetObject="{StaticResource ColumnCheatWindow}"
+                                                     PropertyValue="{Binding ElementName=TablesTreeView,Path=SelectedItem, Converter={StaticResource ToFieldCheaterConverter}, Mode=OneWay}" />
+
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate
+                    ItemsSource="{Binding (tableIndex:Table.Columns)}"
+                    ItemContainerStyle="{StaticResource ContainerStyleForOthers}">
+                    <StackPanel
+                        vm:FilterAttachedBehavior.Filter="{Binding DataContext.TableFilterViewModel, ElementName=Me}">
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Style.Triggers>
+                                    <Trigger Property="vm:FilterAttachedBehavior.IsMarked" Value="True">
+                                        <Setter Property="Background" Value="Gold" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <ContentControl Width="10"
+                                        Content="{StaticResource TreeViewItemProxy}" />
+                        <TextBlock Text="{Binding Name}">
+                            <TextBlock.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick"
+                                              CommandParameter="{Binding}">
+                                    <MouseBinding.Command>
+                                        <utils:CommandGroup>
+                                            <x:Static Member="viewModel:QuerySelectorViewModel.SetQueryCommand" />
+                                            <utils:ExpandTreeViewItemCommand
+                                                RoutedEvent="{x:Static Control.MouseDoubleClickEvent}"
+                                                Target="{StaticResource TreeViewItemProxy}" />
+                                        </utils:CommandGroup>
+                                    </MouseBinding.Command>
+                                </MouseBinding>
+                            </TextBlock.InputBindings>
+                        </TextBlock>
+                    </StackPanel>
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <HierarchicalDataTemplate
+                            ItemsSource="{Binding Converter={StaticResource ColumnToEnumConverter}, Mode=OneWay}"
+                            ItemTemplateSelector="{StaticResource ColumnDataTemplateSelector}">
+                            <StackPanel Orientation="Horizontal"
+                                        vm:FilterAttachedBehavior.Filter="{Binding DataContext.TableFilterViewModel, ElementName=Me}">
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+                                        <Style.Triggers>
+                                            <Trigger Property="vm:FilterAttachedBehavior.IsMarked" Value="True">
+                                                <Setter Property="Background" Value="Gold" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Text=" (PK)"
+                                           Visibility="{Binding Converter={StaticResource IsPrimaryToVisibilityConverter}, Mode=OneWay}" />
+                                <TextBlock Text=" (FK)"
+                                           Visibility="{Binding Converter={StaticResource IsForeignToVisibilityConverter}, Mode=OneWay}" />
+
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </DockPanel>
+</UserControl>

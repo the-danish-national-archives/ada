@@ -1,0 +1,148 @@
+﻿<UserControl
+    x:Class="Ada.UI.Wpf.TableIndexViewer.Views.DataTableViewer.QuerySelectorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:wpf="clr-namespace:Ra.Common.Wpf;assembly=Ra.Common.Wpf"
+    xmlns:u="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+    xmlns:interactivity="clr-namespace:Ra.Common.Wpf.Utils.Interactivity;assembly=Ra.Common.Wpf"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:vm="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.ViewModel;assembly=Ada.UI.Wpf.TableIndexViewer"
+    xmlns:sqlEditor="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.SqlEditor;assembly=Ada.UI.Wpf.TableIndexViewer"
+    xmlns:dataTableViewer="clr-namespace:Ada.UI.Wpf.TableIndexViewer.Views.DataTableViewer"
+    mc:Ignorable="d"
+    d:DesignHeight="50" d:DesignWidth="300"
+    d:DataContext="{Binding SqlShowViewModel.QuerySelectorViewModel, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.TableIndexViewer.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type wpf:CheckedViewModel}">
+                <DockPanel MaxHeight="40" Margin="4"
+                           Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}">
+                    <lex:LocProxy Source="{Binding TextKey}" x:Name="Proxy" />
+                    <ToggleButton Content="{Binding Result, ElementName=Proxy}" FontSize="16"
+                                  IsChecked="{Binding Value}"
+                                  Style="{StaticResource ExpanderDownHeaderStyle}" />
+                </DockPanel>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:QueryViewModelView}">
+                <Grid d:DataContext="{d:DesignInstance vm:QueryViewModelView}">
+                    <DockPanel MaxHeight="40" Margin="4">
+                        <TextBlock
+                            Visibility="{Binding HasName, Converter={x:Static u:BooleanToVisibilityConverter.AsCollapsed}, Mode=OneWay}"
+                            DockPanel.Dock="Top" Text="{Binding Name}" Margin="0,0,0,5" FontSize="14" />
+                        <sqlEditor:SqlEditor Background="{x:Null}"
+                                             Margin="8,0,0,0"
+                                             IsEnabled="False"
+                                             HorizontalAlignment="Stretch"
+                                             Text="{Binding Query}"
+                                             TableIndex="{Binding TableIndex}"
+                                             BorderThickness="0"
+                                             HorizontalScrollBarVisibility="Disabled"
+                                             VerticalScrollBarVisibility="Disabled" />
+
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseUp">
+                                <i:InvokeCommandAction
+                                    Command="{x:Static vm:QuerySelectorViewModel.SetQueryCommand}"
+                                    CommandParameter="{Binding SelectedItem, ElementName=ListBox}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <DockPanel.Style>
+                            <Style TargetType="DockPanel">
+                                <Setter Property="ToolTipService.ShowDuration" Value="60000" />
+                                <Setter Property="ToolTip">
+                                    <Setter.Value>
+                                        <ToolTip>
+                                            <dataTableViewer:QueryDetailsView />
+                                        </ToolTip>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DockPanel.Style>
+                    </DockPanel>
+                    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2,2,6,2">
+                        <dataTableViewer:ToggleButtonStar Height="16"
+                                                          IsChecked="{Binding IsFavorite}"
+                                                          DockPanel.Dock="Left"
+                                                          HorizontalAlignment="Right"
+                                                          VerticalAlignment="Center" />
+                    </DockPanel>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger SourceObject="{Binding}" EventName="QuerySet">
+            <i:InvokeCommandAction Command="u:SetFocusCommand.Instance"
+                                   CommandParameter="{Binding Source={x:Reference SqlEditor}}" />
+            <interactivity:SetPropertyAction PropertyName="IsDropDownOpen" TargetObject="{x:Reference StupidComboBox}">
+                <interactivity:SetPropertyAction.PropertyValue>
+                    <system:Boolean>False</system:Boolean>
+                </interactivity:SetPropertyAction.PropertyValue>
+            </interactivity:SetPropertyAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <DockPanel>
+        <wpf:StupidComboBox
+            x:Name="StupidComboBox"
+            Template="{DynamicResource StupidComboBoxControlTemplate}"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch">
+            <wpf:StupidComboBox.Child>
+
+                <Border BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"
+                        BorderThickness="1">
+                    <sqlEditor:SqlEditor
+                        x:Name="SqlEditor"
+                        Focusable="True"
+                        TableIndex="{Binding TableIndex}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Text="{Binding Query, Mode=TwoWay}" />
+                </Border>
+
+            </wpf:StupidComboBox.Child>
+
+            <wpf:StupidComboBox.Popup>
+                <DockPanel Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <!--                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">-->
+                    <!--                        <CheckBox Margin="4,2,4,2" IsChecked="{Binding ShowFavorites}"-->
+                    <!--                                  Content="{lex:Loc QueryFavorites}" />-->
+                    <!--                        <CheckBox Margin="4,2,4,2" IsChecked="{Binding ShowLatest}"-->
+                    <!--                                  Content="{lex:Loc QueryLatest}" />-->
+                    <!--                        <CheckBox Margin="4,2,4,2" IsChecked="{Binding ShowFromAV}"-->
+                    <!--                                  Content="{lex:Loc QueryFromAV}" />-->
+                    <!--                    </StackPanel>-->
+                    <ListBox DockPanel.Dock="Left"
+                             x:Name="ListBox"
+                             ItemsSource="{Binding SelectableQueries}"
+                             HorizontalContentAlignment="Stretch"
+                             VerticalContentAlignment="Stretch"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <i:Interaction.Behaviors>
+                            <interactivity:BubbleScrollEvent />
+                        </i:Interaction.Behaviors>
+                        <ListBox.InputBindings>
+                            <KeyBinding
+                                Command="{x:Static vm:QuerySelectorViewModel.SetQueryCommand}"
+                                CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListBox}}}"
+                                Key="Enter" />
+                        </ListBox.InputBindings>
+                        <ListBox.ItemContainerStyle>
+                            <StaticResource ResourceKey="ListBoxSubItemWithSeperator" />
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
+                </DockPanel>
+            </wpf:StupidComboBox.Popup>
+        </wpf:StupidComboBox>
+    </DockPanel>
+</UserControl>

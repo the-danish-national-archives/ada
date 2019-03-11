@@ -1,0 +1,75 @@
+﻿<Window x:Class="Ada.UI.Wpf.StartWindow.Views.View.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        mc:Ignorable="d"
+        Title="StartWindow" Height="199.153" Width="482.203"
+        lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+        lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text"
+
+        xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+        xmlns:view1="clr-namespace:Ada.UI.Wpf.StartWindow.Views.View"
+        xmlns:view="clr-namespace:Ada.UI.Wpf.WorkspaceCleanUp.Views.View;assembly=Ada.UI.Wpf.WorkspaceCleanUp.Views"
+        utils:CloseWindowBehavior.Value="{Binding Result}"
+
+        d:DataContext="{Binding StartWindowViewModel, 
+                Source={StaticResource Locator}}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.StartWindow.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <TabControl>
+        <TabItem Header="{lex:Loc OpenAvId}">
+            <DockPanel>
+                <DockPanel
+                    DockPanel.Dock="Top">
+                    <Button
+                        Content="{lex:Loc OpenFolderSelection}"
+                        Command="{Binding OpenFolderSelectionCommand}"
+                        DockPanel.Dock="Right" />
+                    <TextBox Text="{Binding AvId, UpdateSourceTrigger=PropertyChanged}" />
+                    <!--                             IsEditable="True"-->
+                    <!--                    <TextBox Text="" -->
+                    <!--                         DockPanel.Dock="Top"-->
+                    <!--                         />-->
+
+                </DockPanel>
+                <Grid>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+
+                        <StackPanel
+                            DockPanel.Dock="Bottom"
+                            Orientation="Horizontal" FlowDirection="RightToLeft">
+                            <Button
+                                Content="{lex:Loc Open}"
+                                Command="{Binding OpenCommand}" IsDefault="True" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Text="{Binding IsSelectionValidError}" />
+                        </StackPanel>
+                    </StackPanel>
+                    <view1:DrivesSelector
+                        DataContext="{Binding DrivesSelectorViewModel}" />
+                </Grid>
+            </DockPanel>
+
+        </TabItem>
+        <TabItem Header="{lex:Loc Options}">
+            <GroupBox Header="{lex:Loc Databases}">
+
+                <view:WorkspaceCleanUpView
+                    DataContext="{Binding CleanUp}"
+                    Margin="2" />
+            </GroupBox>
+
+        </TabItem>
+
+    </TabControl>
+</Window>

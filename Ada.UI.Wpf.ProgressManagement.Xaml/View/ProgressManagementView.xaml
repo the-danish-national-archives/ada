@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.ProgressManagement.Views.View.ProgressManagementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ignore="http://www.galasoft.ch/ignore"
+             xmlns:utils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactivity="clr-namespace:Ra.Common.Wpf.Utils.Interactivity;assembly=Ra.Common.Wpf"
+             xmlns:view="clr-namespace:Ada.UI.Wpf.ProgressManagement.Views.View"
+             mc:Ignorable="d ignore"
+             d:DataContext="{Binding ProgressManagementViewModel, 
+                Source={StaticResource Locator}}"
+             d:DesignWidth="682.896" d:DesignHeight="319.654"
+             utils:RegisterCommandHelper.RegisterCommandBindings="{Binding CommandBindings}"
+             lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+             lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text"
+
+             utils:ShowWindowWithDatacontextBehavior.DataContext="{Binding ResultsListViewModel}"
+             utils:ShowWindowWithDatacontextBehavior.Trigger="{Binding ResultsListViewModel.Table}"
+             utils:ShowWindowWithDatacontextBehavior.Window="{DynamicResource ListResultsWindow}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.ProgressManagement.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Window x:Key="ListResultsWindow"
+                    WindowStyle="ToolWindow" Height="300" Width="300">
+                <i:Interaction.Behaviors>
+                    <interactivity:HideNotCloseBehavior />
+                </i:Interaction.Behaviors>
+                <view:ResultsList
+                    DataContext="{Binding }" />
+            </Window>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="100" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <view:TreeView DataContext="{Binding}" Grid.Column="0" />
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+        <DockPanel Grid.Column="2">
+            <DockPanel Visibility="Collapsed" DockPanel.Dock="Bottom">
+                <Button DockPanel.Dock="Left" Content="{lex:Loc RunTest}" Command="{Binding RunTestCommand}" />
+                <Button DockPanel.Dock="Right" Content="{lex:Loc ShowReport}" />
+                <StackPanel />
+            </DockPanel>
+            <view:CheckInformation DataContext="{Binding SelectedField}" />
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

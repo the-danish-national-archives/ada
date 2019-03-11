@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:viewUtil1="clr-namespace:Ada.UI.Wpf.ProgressManagement.ViewUtil;assembly=Ada.UI.Wpf.ProgressManagement">
+    <system:Boolean x:Key="BoolTrue">True</system:Boolean>
+    <system:Boolean x:Key="BoolFalse">False</system:Boolean>
+
+
+    <viewUtil1:CheckTreeStatusToIcon x:Key="CheckTreeStatusToIcon" />
+
+
+    <!--                    xmlns:progressManagement="clr-namespace:Ada.UI.Wpf.ProgressManagement"-->
+    <!--    <viewUtil:ToBitmapImageConverter x:Key="ToBitmapImageConverter"/>-->
+
+</ResourceDictionary>

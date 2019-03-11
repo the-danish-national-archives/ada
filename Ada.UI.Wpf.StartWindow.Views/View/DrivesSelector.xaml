@@ -1,0 +1,74 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+
+
+    xmlns:drivesSamples="clr-namespace:Expression.Blend.SampleData.DrivesSamples;assembly=Ada.UI.Wpf.StartWindow"
+
+
+    x:Class="Ada.UI.Wpf.StartWindow.Views.View.DrivesSelector"
+    mc:Ignorable="d"
+    d:DesignHeight="100" d:DesignWidth="300"
+
+    lex:ResxLocalizationProvider.DefaultDictionary="Properties.UIText"
+    lex:ResxLocalizationProvider.DefaultAssembly="Ada.UI.Wpf.Text">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.StartWindow.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <drivesSamples:DrivesSamples x:Key="DrivesSamples" d:IsDataSource="True" />
+            <DataTemplate x:Key="DrivesItemTemplate">
+                <StackPanel Width="120">
+                    <CheckBox x:Name="checkBox" IsChecked="{Binding Status}">
+                        <TextBlock Text="{Binding Drive}" />
+                    </CheckBox>
+                </StackPanel>
+            </DataTemplate>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplateUniform">
+
+                <UniformGrid IsItemsHost="True" />
+            </ItemsPanelTemplate>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplateWrapPanel">
+                <WrapPanel
+                    Width="{Binding (FrameworkElement.ActualWidth), 
+            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+                    ItemWidth="{Binding (ListView.View).ItemWidth, 
+            RelativeSource={RelativeSource AncestorType=ListView}}"
+                    MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+                    ItemHeight="{Binding (ListView.View).ItemHeight, 
+            RelativeSource={RelativeSource AncestorType=ListView}}" />
+            </ItemsPanelTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Path="DrivesSelectorViewModel" Source="{StaticResource Locator}" />
+    </UserControl.DataContext>
+    <DockPanel>
+        <StackPanel
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal">
+            <!--            FlowDirection="RightToLeft"-->
+            <Button
+                Command="{Binding UpdateDriveListCommand}"
+                Content="{lex:Loc UpdateDrives}" />
+            <!-- Content="3213"-->
+        </StackPanel>
+        <!--     <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                 >
+
+        </ScrollViewer> -->
+        <ListView x:Name="listView" ItemsSource="{Binding Drives}"
+                  ItemTemplate="{DynamicResource DrivesItemTemplate}"
+                  d:DataContext="{StaticResource DrivesSamples}"
+                  ItemsPanel="{DynamicResource ItemsPanelTemplateWrapPanel}" />
+        <!-- ScrollViewer.CanContentScroll="False" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"-->
+    </DockPanel>
+</UserControl>

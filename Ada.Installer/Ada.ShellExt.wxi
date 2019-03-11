@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+      <Component Id="cmp_ShellExtContextMenuHandler" Guid="{E3628E22-5244-4045-9082-FFD1A7F182AD}"
+                  Directory="INSTALLFOLDER">
+        <File
+          SelfRegCost="1"
+          Id="fil34B19F5F0D19B175039DEB34D4956F8F" KeyPath="yes" Source="..\Ada.ShellExtContextMenuHandler\bin\Release\x64\Ada.ShellExtContextMenuHandler.dll">
+        </File>
+       <!-- <RegistryValue Root="HKCR" Key="Folder\shellex\ContextMenuHandlers\{B8775190-283E-4F62-812C-11E837C78B97}" Value="Ada.ShellExtContextMenuHandler.FileContextMenuExt" Type="string" Action="write" />-->
+      </Component>
+  </Fragment>
+</Include>

@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBE4A868-5A00-45F4-B648-D2F2843C2F53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ada.Checks</RootNamespace>
+    <AssemblyName>Ada.Checks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MetaData\AssemblySharedInfo.cs">
+      <Link>Properties\AssemblySharedInfo.cs</Link>
+    </Compile>
+    <Compile Include="ArchiveIndex\AdaAvSchemaVersionArchieIndex.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexCreationPeriodViolation.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexArchivePeriodViolation.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexCaseIdOrCaseTitleMissing.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexDocDateMissing.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexHaveDigitalDocsNoContainingDocsMark.cs" />
+    <Compile Include="AdaAvXmlIllegalEncoding.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexInvalid.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexMarkedContainingDocIdWithNoDigitalDocs.cs" />
+    <Compile Include="AdaAvXmlIndexMissingProlog.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexRelatedRecordsNamesMisMatch.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexRelatedRecordsNamesMissing.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexNotWellFormed.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexDocTitleMissing.cs" />
+    <Compile Include="ArchiveIndex\ArchiveIndexRelatedRecordsNameInvalid.cs" />
+    <Compile Include="ArchiveIndex\ArchiveVersionViolation.cs" />
+    <Compile Include="ContextDocIndex\AdaAvSchemaVersionContextDocumentationIndex.cs" />
+    <Compile Include="ContextDocIndex\ContextDocIndexDocMissingCategory.cs" />
+    <Compile Include="ContextDocIndex\ContextDocumentationInvalid.cs" />
+    <Compile Include="ContextDocIndex\ContextDocumentationNotWellFormed.cs" />
+    <Compile Include="DiskSpaceWarning.cs" />
+    <Compile Include="DocIndex\AdaAvSchemaVersionDocIndex.cs" />
+    <Compile Include="DocIndex\DocIndexDocsOnlyRefereencedViaParentFromTables.cs" />
+    <Compile Include="DocIndex\DocIndexDocsNotRefereencedFromTables.cs" />
+    <Compile Include="DocIndex\DocIndexDocsReferedFromTablesNotExisting.cs" />
+    <Compile Include="DocIndex\DocIndexInvalid.cs" />
+    <Compile Include="DocIndex\DocIndexInvalidGmlXsd.cs" />
+    <Compile Include="DocIndex\DocIndexMissingParentId.cs" />
+    <Compile Include="DocIndex\DocIndexNestedDocCount.cs" />
+    <Compile Include="DocIndex\DocIndexNotWellFormed.cs" />
+    <Compile Include="DocIndex\DocIndexRecursiveParentId.cs" />
+    <Compile Include="DocIndex\DocIndexUniqueDocIds.cs" />
+    <Compile Include="DocumentsContent\DocumentsHighPageCount.cs" />
+    <Compile Include="DocumentsContent\DocumentsBadContent.cs" />
+    <Compile Include="DocumentsContent\DocumentsMP3Standard.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffBlankFirstPages.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffUnreadablePages.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffBlankPages.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffCompression.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffOddBitDepth.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffPrivateTags.cs" />
+    <Compile Include="DocumentsContent\DocumentsTiffStandard.cs" />
+    <Compile Include="DocumentsContent\DocumentsVideoContent.cs" />
+    <Compile Include="DocumentsContent\DocumentsVideoFormat.cs" />
+    <Compile Include="DocumentsContent\DocumentsWaveStandard.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocMissingDoc.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocMissingFromIndex.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocBadFileTypes.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocDuplicateFolderName.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocEmptyDocFolder.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocEmptyFolders.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocInvalidFirstNumber.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocInvalidObject.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocMaxCount.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocMixedFileTypes.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocNoFolders.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocToDiskContent.cs" />
+    <Compile Include="Documents\ContextDocOnDisk\ContextDocFileGap.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsFileGap.cs" />
+    <Compile Include="Documents\XFileGap.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsMissingDoc.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsMissingFromIndex.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsBadFileTypes.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsDuplicateFolderName.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsEmptyFolders.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsInvalidFirstNumber.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsInvalidObjects.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsMaxCount.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsMixedFileTypes.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsNoFolders.cs" />
+    <Compile Include="Documents\DocumentsOnDisk\DocumentsToDiskContent.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureContextDocsMissing.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureContextDocsWrongMedia.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureDuplicateMediaNumber.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureFirstMediaMissing.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureIndicesWrongMedia.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureMediaNumberGaps.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureMissingIndicesFirstMedia.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureMultipleDocuments.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureMultipleTables.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureSchemasMissing.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureSchemasWrongMedia.cs" />
+    <Compile Include="Documents\FolderStructure\FolderStructureTablesMissing.cs" />
+    <Compile Include="Documents\IndicesArchiveIndex.cs" />
+    <Compile Include="Documents\IndicesContextDocIndex.cs" />
+    <Compile Include="Documents\IndicesDocIndex.cs" />
+    <Compile Include="Documents\IndicesFileIndex.cs" />
+    <Compile Include="Documents\IndicesTableIndex.cs" />
+    <Compile Include="Documents\SchemaFoldersUnwantedContents.cs" />
+    <Compile Include="Documents\SchemaMissingFolder.cs" />
+    <Compile Include="Documents\XBadFileTypes.cs" />
+    <Compile Include="Documents\XDuplicateFolderName.cs" />
+    <Compile Include="Documents\XEmptyFolders.cs" />
+    <Compile Include="Documents\XInvalidFirstNumber.cs" />
+    <Compile Include="Documents\XInvalidObject.cs" />
+    <Compile Include="Documents\DocumentsTypeListing.cs" />
+    <Compile Include="Documents\XMaxCount.cs" />
+    <Compile Include="Documents\XMissingDoc.cs" />
+    <Compile Include="Documents\XMissingFromIndex.cs" />
+    <Compile Include="Documents\XMixedFileTypes.cs" />
+    <Compile Include="Documents\XNoFolders.cs" />
+    <Compile Include="Documents\XToDatabase.cs" />
+    <Compile Include="FileIndex\AdaAvSchemaVersionFileIndex.cs" />
+    <Compile Include="FileIndex\AdaAvSchemaVersionXmlSchema.cs" />
+    <Compile Include="FileIndex\FileIndexBadCheckSum.cs" />
+    <Compile Include="FileIndex\FileIndexAvid.cs" />
+    <Compile Include="FileIndex\FileIndexFilesMissing.cs" />
+    <Compile Include="FileIndex\FileIndexFilesNotInIndex.cs" />
+    <Compile Include="FileIndex\FileIndexDuplet.cs" />
+    <Compile Include="FileIndex\FileIndexInvalid.cs" />
+    <Compile Include="FileIndex\FileIndexNotWellFormed.cs" />
+    <Compile Include="ForeignKey\ForeignKeyMissingPrimaryColumns.cs" />
+    <Compile Include="ForeignKey\ForeignKeyNullCount.cs" />
+    <Compile Include="ForeignKey\ForeignKeyReferenceNotPrimary.cs" />
+    <Compile Include="ForeignKey\ForeignKeyErrorSummary.cs" />
+    <Compile Include="ForeignKey\ForeignKeyTypeMismatch.cs" />
+    <Compile Include="ForeignKey\ForeignKeyWithNoTarget.cs" />
+    <Compile Include="ForeignKey\ForeignKeyBlanks.cs" />
+    <Compile Include="Gml\GmlFeatureMemberNotFound.cs" />
+    <Compile Include="Gml\GmlFileTooLarge.cs" />
+    <Compile Include="Gml\GmlGeometryOutOfBounds.cs" />
+    <Compile Include="Gml\GmlIllegalBounds.cs" />
+    <Compile Include="Gml\GmlIllegalDimension.cs" />
+    <Compile Include="Gml\GmlIllegalEncoding.cs" />
+    <Compile Include="Gml\GmlIllegalEPSG.cs" />
+    <Compile Include="Gml\GmlInvalid.cs" />
+    <Compile Include="Gml\GmlMissingProlog.cs" />
+    <Compile Include="Gml\GmlNameSpaceDeclarationerror.cs" />
+    <Compile Include="Gml\GmlNoGeometryError.cs" />
+    <Compile Include="Gml\GmlNotWellFormed.cs" />
+    <Compile Include="Gml\GmlOgcSchemasInvalid.cs" />
+    <Compile Include="Gml\GmlOgcSchemasMissing.cs" />
+    <Compile Include="Gml\GmlRootElementError.cs" />
+    <Compile Include="Gml\GmlSchemaExtensionBaseError.cs" />
+    <Compile Include="Gml\GmlSchemaGeometryMissingError.cs" />
+    <Compile Include="Gml\GmlSchemaGeometrySubstitutionGroupError.cs" />
+    <Compile Include="Gml\GmlSchemaIllegalEncoding.cs" />
+    <Compile Include="Gml\GmlSchemaInvalid.cs" />
+    <Compile Include="Gml\GmlSchemaLocationError.cs" />
+    <Compile Include="Gml\GmlSchemaMissingAnnotation.cs" />
+    <Compile Include="Gml\GmlSchemaMissingFeature.cs" />
+    <Compile Include="Gml\GmlSchemaMissingFeatureAnnotation.cs" />
+    <Compile Include="Gml\GmlSchemaMissingOgcRef.cs" />
+    <Compile Include="Gml\GmlSchemaNotFound.cs" />
+    <Compile Include="Gml\GmlSchemaNotWellFormed.cs" />
+    <Compile Include="Gml\GmlSchemaOgcImportError.cs" />
+    <Compile Include="PrimaryKey\PrimaryKeyBlanks.cs" />
+    <Compile Include="PrimaryKey\PrimaryKeyDuplikates.cs" />
+    <Compile Include="PrimaryKey\PrimaryKeyErrorSummary.cs" />
+    <Compile Include="PrimaryKey\PrimaryKeyNull.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableIndex\AdaAvSchemaVersionTableIndex.cs" />
+    <Compile Include="TableIndex\TableIndexContainsCaseId.cs" />
+    <Compile Include="TableIndex\TableIndexDuplicateColumnId.cs" />
+    <Compile Include="TableIndex\TableIndexDuplicateColumnName.cs" />
+    <Compile Include="TableIndex\TableIndexNoRelations.cs" />
+    <Compile Include="TableIndex\TableIndexDuplicateKeys.cs" />
+    <Compile Include="TableIndex\TableIndexDuplikateViewName.cs" />
+    <Compile Include="TableIndex\TableIndexForeignKeyColumnMissingInParent.cs" />
+    <Compile Include="TableIndex\TableIndexForeignKeyColumnMissingInReferenced.cs" />
+    <Compile Include="TableIndex\TableIndexForeignKeyNotUnique.cs" />
+    <Compile Include="TableIndex\TableIndexFunctionalDescriptionListing.cs" />
+    <Compile Include="TableIndex\TableIndexInvalid.cs" />
+    <Compile Include="TableIndex\TableIndexInvalidColumnDescription.cs" />
+    <Compile Include="TableIndex\TableIndexInvalidDescription.cs" />
+    <Compile Include="TableIndex\TableIndexInvalidFolderName.cs" />
+    <Compile Include="TableIndex\TableIndexMissingParentColumns.cs" />
+    <Compile Include="TableIndex\TableIndexNotifyViews.cs" />
+    <Compile Include="TableIndex\TableIndexNotWellFormed.cs" />
+    <Compile Include="TableIndex\TableIndexPrimaryKeyNotUnique.cs" />
+    <Compile Include="TableIndex\TableIndexReferencedTableMissing.cs" />
+    <Compile Include="TableIndex\TableIndexSequenceGaps.cs" />
+    <Compile Include="TableIndex\TableIndexTypeOriginalMissing.cs" />
+    <Compile Include="TableIndex\TableIndexViewsMissingDescription.cs" />
+    <Compile Include="TableIndex\TableIndexViewSqlExecuted.cs" />
+    <Compile Include="TableIndex\TableIndexViewsUnwantedContent.cs" />
+    <Compile Include="Table\TableFieldLagringsform.cs" />
+    <Compile Include="Table\TableFieldLengthMismatch.cs" />
+    <Compile Include="Table\TableFolderSequenceInvalidStart.cs" />
+    <Compile Include="Table\TableIdentifierReservedWords.cs" />
+    <Compile Include="Table\TableIllegalEncoding.cs" />
+    <Compile Include="Table\DocumentsCountingProblemFiles.cs" />
+    <Compile Include="Table\TableLeadingOrTrailingWhitespace.cs" />
+    <Compile Include="Table\TableLimitsOfColumnsOfDateTime.cs" />
+    <Compile Include="Table\TableLimitsOfDocumentDateColumns.cs" />
+    <Compile Include="Table\TableMissingProlog.cs" />
+    <Compile Include="Table\TableNameDuplicate.cs" />
+    <Compile Include="Table\TableNotValid.cs" />
+    <Compile Include="Table\TableNotWellFormed.cs" />
+    <Compile Include="Table\TablePrimaryKeyIsNullable.cs" />
+    <Compile Include="Table\TableRowCountMismatch.cs" />
+    <Compile Include="Table\TableMissnamedXml.cs" />
+    <Compile Include="Table\TablesFolderSequenceGaps.cs" />
+    <Compile Include="Table\TableTestMissingTable.cs" />
+    <Compile Include="Table\TableTestNotInIndex.cs" />
+    <Compile Include="Table\TableTestNumberingGaps.cs" />
+    <Compile Include="Table\TableEmptyFolders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ada.Repositories\Ada.Repositories.csproj">
+      <Project>{3A99246C-3868-4B96-BB55-F4E78B394A76}</Project>
+      <Name>Ada.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdaChecksBase\Ada.ChecksBase.csproj">
+      <Project>{26ACEBD2-B01E-44AD-B933-E0EF9062853D}</Project>
+      <Name>Ada.ChecksBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.Common\Ra.Common.csproj">
+      <Project>{E7F28E50-CACB-4BCD-AA06-FF4BE312FB4D}</Project>
+      <Name>Ra.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.DomainEntities\Ra.DomainEntities.csproj">
+      <Project>{67F9FCFF-7AAA-4765-AB11-12349402DD50}</Project>
+      <Name>Ra.DomainEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.EntityExtensions\Ra.EntityExtensions.csproj">
+      <Project>{ABF39E6C-AAC5-4889-9212-C1FE3209970B}</Project>
+      <Name>Ra.EntityExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql99ReservedWords.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

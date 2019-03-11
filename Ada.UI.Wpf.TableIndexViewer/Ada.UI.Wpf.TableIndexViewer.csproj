@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53830426-DD08-41D4-9C0E-8F70D53CCAD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ada.UI.Wpf.TableIndexViewer</RootNamespace>
+    <AssemblyName>Ada.UI.Wpf.TableIndexViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'View|AnyCPU'">
+    <OutputPath>bin\View\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;VIEW</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphX.PCL.Common, Version=2.3.6.0, Culture=neutral, PublicKeyToken=a6cdb671d651b60a, processorArchitecture=MSIL">
+      <HintPath>..\packages\GraphX.2.3.6.0\lib\net40-client\GraphX.PCL.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GraphX.PCL.Logic, Version=2.3.6.0, Culture=neutral, PublicKeyToken=3b65ef85075e278f, processorArchitecture=MSIL">
+      <HintPath>..\packages\GraphX.2.3.6.0\lib\net40-client\GraphX.PCL.Logic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GraphX.WPF.Controls, Version=2.3.6.0, Culture=neutral, PublicKeyToken=bab23663f80c9e76, processorArchitecture=MSIL">
+      <HintPath>..\packages\GraphX.2.3.6.0\lib\net40-client\GraphX.WPF.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.3\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Graphviz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.2\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.2\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.2, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.2\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFLocalizeExtension.3.3.1\lib\net35\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.5.1\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MetaData\AssemblySharedInfo.cs">
+      <Link>Properties\AssemblySharedInfo.cs</Link>
+    </Compile>
+    <Compile Include="DataTableViewer\SqlEditor\SqlEditor.xaml.cs">
+      <DependentUpon>SqlEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTableViewer\SqlEditor\SqlSuggestionColumnView.xaml.cs">
+      <DependentUpon>SqlSuggestionColumnView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTableViewer\SqlEditor\SqlSuggestionEmptyView.xaml.cs">
+      <DependentUpon>SqlSuggestionEmptyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTableViewer\SqlEditor\SqlSuggestionTableView.xaml.cs">
+      <DependentUpon>SqlSuggestionTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTableViewer\Util\DataGridCellExtendedPropertiesConverter.cs" />
+    <Compile Include="Properties\DummyForInclude.cs" />
+    <Compile Include="GraphTableViewer\Util\ColumnsFilterConverter.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\Queries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Queries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GraphTableViewer\Model\ERGraphSettings.cs" />
+    <Compile Include="GraphTableViewer\Model\ERGraphVisualSettings.cs" />
+    <Compile Include="DataTableViewer\Model\FavoriteQueries.cs" />
+    <Compile Include="DataTableViewer\Model\QueryList.cs" />
+    <Compile Include="DataTableViewer\SqlEditor\HighlightingDefinitionToStyleSelector.cs" />
+    <Compile Include="DataTableViewer\Model\LatestQueries.cs" />
+    <Compile Include="DataTableViewer\Model\Query.cs" />
+    <Compile Include="GraphTableViewer\ViewModel\GraphTableViewModel.cs" />
+    <Compile Include="TreeTableViewer\ViewModel\FilterAttachedBehavior.cs" />
+    <Compile Include="TreeTableViewer\ViewModel\TableFilterViewModel.cs" />
+    <Compile Include="TreeTableViewer\ViewModel\TreeTableViewModel.cs" />
+    <Compile Include="ViewModel\TableIndexViewerViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="DataTableViewer\SqlEditor\SqlSuggester.cs" />
+    <Compile Include="DataTableViewer\SqlEditor\SqlSuggestion.cs" />
+    <Compile Include="DataTableViewer\ViewModel\QuerySelectorViewModel.cs" />
+    <Compile Include="DataTableViewer\ViewModel\IQueryViewModel.cs" />
+    <Compile Include="DataTableViewer\ViewModel\QueryViewModelView.cs" />
+    <Compile Include="TreeTableViewer\Util\ColumnDataTemplateSelector.cs" />
+    <Compile Include="ViewUtil\IsForeignToVisibilityConverter.cs" />
+    <Compile Include="ViewUtil\ToFieldCheaterConverter.cs" />
+    <Compile Include="TreeTableViewer\Util\ColumnToEnumConverter.cs" />
+    <Compile Include="ViewUtil\IsPrimaryToVisibilityConverter.cs" />
+    <Compile Include="FieldCheaterViewer\ViewModel\FieldCheaterViewModel.cs" />
+    <Compile Include="DataTableViewer\ViewModel\DataTableViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Queries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Queries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="SampleAVID\Schemas\standard\archiveIndex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\contextDocumentationIndex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\docIndex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\fileIndex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\GML2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\gmlsf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\gmlsfLevels.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="SampleAVID\Schemas\standard\tableIndex.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="SampleAVID\Schemas\standard\xlinks.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SampleAVID\Schemas\standard\XMLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataTableViewer\SqlEditor\ModeV2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SampleAVID\Schemas\localShared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SampleAVID\Indices\archiveIndex.xml" />
+    <None Include="SampleAVID\Indices\contextDocumentationIndex.xml" />
+    <None Include="SampleAVID\Indices\docIndex.xml" />
+    <None Include="SampleAVID\Indices\fileIndex.xml" />
+    <EmbeddedResource Include="SampleAVID\Indices\tableIndex.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataTableViewer\SqlEditor\SqlHighlighting.xshd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ada.Repositories\Ada.Repositories.csproj">
+      <Project>{3a99246c-3868-4b96-bb55-f4e78b394a76}</Project>
+      <Name>Ada.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.IndexEntityLoaders\Ada.IndexEntityLoaders.csproj">
+      <Project>{8881d59c-d1cd-4d0e-8b3e-82cbc1f5488e}</Project>
+      <Name>Ada.IndexEntityLoaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.TableIndexViewer.ERGraph\Ada.UI.Wpf.TableIndexViewer.ERGraph.csproj">
+      <Project>{66508a31-a6fc-4fda-bf3b-e7f09a65613c}</Project>
+      <Name>Ada.UI.Wpf.TableIndexViewer.ERGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.Text\Ada.UI.Wpf.Text.csproj">
+      <Project>{dbba6bd2-a530-4963-ab55-28dc09792428}</Project>
+      <Name>Ada.UI.Wpf.Text</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.Common.Wpf\Ra.Common.Wpf.csproj">
+      <Project>{6efb77e1-a1d4-401a-96b5-ac12f0e718e9}</Project>
+      <Name>Ra.Common.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.Common\Ra.Common.csproj">
+      <Project>{e7f28e50-cacb-4bcd-aa06-ff4be312fb4d}</Project>
+      <Name>Ra.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.DomainEntities\Ra.DomainEntities.csproj">
+      <Project>{67f9fcff-7aaa-4765-ab11-12349402dd50}</Project>
+      <Name>Ra.DomainEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.EntityExtensions\Ra.EntityExtensions.csproj">
+      <Project>{abf39e6c-aac5-4889-9212-c1fe3209970b}</Project>
+      <Name>Ra.EntityExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.EntityMappings.NHibernate\Ra.EntityMappings.NHibernate.csproj">
+      <Project>{126225b6-c69b-4a69-aff5-6eeb3c3c964b}</Project>
+      <Name>Ra.EntityMappings.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.XmlEntities\Ra.XmlEntities.csproj">
+      <Project>{b1436c6b-abc3-45f9-b216-f5c3ad0c2478}</Project>
+      <Name>Ra.XmlEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DataTableViewer\SqlEditor\SqlEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataTableViewer\SqlEditor\SqlSuggestionColumnView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataTableViewer\SqlEditor\SqlSuggestionEmptyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataTableViewer\SqlEditor\SqlSuggestionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<SyntaxDefinition name="Custom Highlighting" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+<!--  <Color name="String" foreground="Blue" />-->
+<!--  <Color name="BeginQuery" fontWeight="bold" foreground="Green" />-->
+<!--  <Color name="Queries" fontWeight="bold" foreground="Green" />-->
+<!--~1~  <Color name="Operations" fontWeight="bold" foreground="Cyan" />@1@-->
+<!--  <Color name="OtherKeyWords" fontWeight="bold" foreground="YellowGreen" />-->
+<!--  <Color name="FromSelect" fontWeight="bold" foreground="YellowGreen" />-->
+<!--  <Color name="FromFrom" fontWeight="bold" foreground="YellowGreen" />-->
+<!--  <Color name="FromOrderBy" fontWeight="bold" foreground="YellowGreen" />-->
+<!--  <Color name="FromExpr" fontWeight="bold" foreground="YellowGreen" />-->
+  <!--
+  -->
+  <Color name="Comment" foreground="Green" />
+  <Color name="BadRequest" fontWeight="normal" fontStyle="italic" foreground="Red" />
+  
+<!--  <Color name="LargeStructure" fontWeight="black" foreground="Blue" />-->
+  <Color name="LargeStructure" fontWeight="800" foreground="Blue" />
+<!--  <Color name="LargeStructureBad" fontWeight="800" foreground="Red" fontStyle="strike" />-->
+  <Color name="LargeStructureBad" fontWeight="800" foreground="Red" />
+  <Color name="SemiStructure" fontWeight="bold" foreground="LightSkyBlue" />
+  <Color name="SmallStructure" fontWeight="bold" foreground="Turquoise" />
+  
+  <Color name="Other" fontWeight="bold" foreground="Black" />
+  <Color name="UnknownIdentifier" fontWeight="normal" foreground="Purple" />
+
+  <Color name="NumberLiteral" fontWeight="bold" foreground="BlueViolet" />
+  
+  <!-- Rules using these colors are added in code -->
+  <Color name="TableName" fontWeight="bold" foreground="DarkGreen" />
+  <Color name="ColumnName" fontWeight="normal" fontStyle="italic" foreground="DarkGreen" />
+
+  <!-- This is the main ruleset. -->
+  <RuleSet ignoreCase="true">
+    <Span color="Comment" begin="--" />
+    <Span color="Comment" multiline="true" begin="/\*" end="\*/" />
+
+
+
+    <Rule color="LargeStructure">
+      WITH(\s+RECURSIVE)?\s
+    </Rule>
+    <Rule color="LargeStructure">
+      UNION(\s+ALL)?\s
+    </Rule>
+    <Rule color="LargeStructure">
+      SELECT(\s+(DISTINCT|ALL))?\s
+    </Rule>
+    <Keywords color="LargeStructure">
+      <Word>WITH</Word>
+      <Word>EXCEPT</Word>
+      <Word>INTERSECT</Word>
+      <Word>VALUES</Word>
+    </Keywords>
+
+    <Rule color="LargeStructureBad">
+      (BULK\s+)?INSERT\s
+    </Rule>
+    <Rule color="LargeStructureBad">
+      ((DISABLE|ENABLE)\s+)?TRIGGER\s
+    </Rule>
+    <Keywords color="LargeStructureBad">
+      <Word>DELETE</Word>
+      <Word>INSERT</Word>
+      <Word>MERGE</Word>
+      <Word>READTEXT</Word>
+      <Word>UPDATE</Word>
+      <Word>UPDATETEXT</Word>
+      <Word>WRITETEXT</Word>
+      <Word>ALTER</Word>
+      <Word>CREATE</Word>
+      <Word>DROP</Word>
+      <Word>VIEW</Word>
+      <Word>TRUNCATE TABLE</Word>
+    </Keywords>
+
+    <Rule color="SemiStructure">
+      UNION(\s+ALL)?\s
+    </Rule>
+    <Rule color="SemiStructure">
+      ORDER\s+BY\s
+    </Rule>
+    <Rule color="SemiStructure">
+      GROUP\s+BY\s
+    </Rule>
+    <Rule color="SemiStructure">
+      (NATURAL\s+)?((LEFT(\sOUTER)?)\s+|INNER\s+|CROSS\s+)?JOIN\s
+    </Rule>
+    <Keywords color="SemiStructure">
+      <Word>LIMIT</Word>
+      <Word>OFFSET</Word>
+      <Word>FROM</Word>
+      <Word>WHERE</Word>
+      <Word>OFFSET</Word>
+      <Word>OFFSET</Word>
+    </Keywords>
+
+    <Keywords color="SmallStructure">
+      <Word>HAVING</Word>
+      <Word>ASC</Word>
+      <Word>DESC</Word>
+      <Word>AS</Word>
+      <Word>DISTINCT</Word>
+      <Word>CAST</Word>
+      <Word>AS</Word>
+      <Word>COLLATE</Word>
+      <Word>NOT</Word>
+      <Word>LIKE</Word>
+      <Word>GLOB</Word>
+      <Word>REGEXP</Word>
+      <Word>MATCH</Word>
+      <Word>ESCAPE</Word>
+      <Word>ISNULL</Word>
+      <Word>NOTNULL</Word>
+      <Word>NOT NULL</Word>
+      <Word>IS</Word>
+      <Word>IS NOT</Word>
+      <Word>NOT BETWEEN</Word>
+      <Word>AND</Word>
+      <Word>IN</Word>
+      <Word>EXISTS</Word>
+      <Word>CASE</Word>
+      <Word>WHEN</Word>
+      <Word>THEN</Word>
+      <Word>ELSE</Word>
+      <Word>END</Word>
+      <Word>ON</Word>
+    </Keywords>
+    
+<!--    <Rule color="Other">[*()=,.]</Rule>-->
+
+
+    <!-- Digits (from CSharp-Mode.xshd) -->
+    <Rule color="NumberLiteral">
+      \b0[xX][0-9a-fA-F]+  # hex number
+      |
+      (	\b\d+(\.[0-9]+)?   #number with optional floating point
+      |	\.[0-9]+           #or just starting with floating point
+      )
+      ([eE][+-]?[0-9]+)? # optional exponent
+    </Rule>
+
+    <!-- these two rules are changed in code -->
+    <Rule color="TableName">\w[\d\w]*</Rule>
+    <Rule color="ColumnName">\w[\d\w]*</Rule>
+    
+    <Rule color="UnknownIdentifier">\w[\d\w]*</Rule>
+    
+<!--    <Span color="BeginQuery" ruleSet="QueriesRuleSet" multiline="true">-->
+<!--      <Begin></Begin>-->
+<!--      <End></End>-->
+<!--    </Span>-->
+    
+    <Keywords color="BadRequest">
+      <Word>;</Word>
+    </Keywords>
+    
+<!--    <Span color="BadRequest" multiline="true">-->
+<!--      <Begin>ALTER|CREATE|DISABLE TRIGGER|DROP|ENABLE|INSERT|UPDATE|DELETE|MERGE|TRUNCATE TABLE|UPDATE STATISTICS</Begin>-->
+<!--      <End>;</End>-->
+<!--    </Span>-->
+
+<!--    ~1~ParanthesisTrap@1@-->
+<!--    <Span multiline="true"-->
+<!--      -->
+<!--      ruleSet="QueriesRuleSet"-->
+<!--      >-->
+<!--      <Begin>[(]</Begin>-->
+<!--      <End>[)]</End>-->
+<!--    </Span>-->
+    
+    
+  </RuleSet>
+
+</SyntaxDefinition>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<docIndex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sa.dk/xmlns/diark/1.0"
+          xsi:schemaLocation="http://www.sa.dk/xmlns/diark/1.0 ../Schemas/standard/docIndex.xsd">
+  <doc>
+    <dID>1</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Projektbeskrivelse.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>2</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Brev til Etisk råd.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>3</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Lovudkast kryptering.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>4</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Artikel ComputerWorld.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>5</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Artikel burundi.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>6</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Udnævnelse Etisk Råd</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>7</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Demografisk Forskningscenter.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>8</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Udskiftning PC.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>9</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Alfiprjekt.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>10</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Vedtægter TeleDanmark.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>11</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Minister tale.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>12</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Alfiprojekt.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>13</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Dagsorden Etisk Råd.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>14</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Kryptering EU kommision.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>15</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Ændret udkast til artikel Videnskabsministeriet.msg</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>16</dID>
+    <pID>15</pID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>ComputerWorld.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>17</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Program Burundi.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>18</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Etisk Råd.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>19</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Forskningsprojekter Demografisk Forskningscenter.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>20</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>planudskiftPC.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>21</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>ALFIprojekt.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>22</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Vedtægter Tele Danmark.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+  <doc>
+    <dID>23</dID>
+    <mID>1</mID>
+    <dCf>docCollection1</dCf>
+    <oFn>Handelskammeret tale.doc</oFn>
+    <aFt>tif</aFt>
+  </doc>
+</docIndex>

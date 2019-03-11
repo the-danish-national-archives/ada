@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DB68CB3-3A0C-4667-A20C-A62D1E02B4C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ada.UI.Winforms</RootNamespace>
+    <AssemblyName>Ada.UI.Winforms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ShellBrowser">
+      <HintPath>..\System.Data.SQLite.ExtraDlls\ShellBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFLocalizeExtension, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WPFLocalizeExtension.3.3.1\lib\net35\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XAMLMarkupExtensions.1.5.1\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MetaData\AssemblySharedInfo.cs">
+      <Link>Properties\AssemblySharedInfo.cs</Link>
+    </Compile>
+    <Compile Include="PopupWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileIndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileIndexForm.Designer.cs">
+      <DependentUpon>CreateFileIndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiRunner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\ReflectionViewer.cs" />
+    <Compile Include="Printing\RichTextBoxPrintHelper.cs" />
+    <Compile Include="Printing\SA_DocumentPrint.cs" />
+    <Compile Include="SelectAvIdForm.cs" />
+    <Compile Include="SelectAvIdForm.Designer.cs">
+      <DependentUpon>SelectAvIdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentChooser.Designer.cs">
+      <DependentUpon>UC_DocumentChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_ContextDocumentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_ContextDocumentViewer.Designer.cs">
+      <DependentUpon>UC_ContextDocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewer.Designer.cs">
+      <DependentUpon>UC_DocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewerForm.Designer.cs">
+      <DependentUpon>UC_DocumentViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewerTagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_DocumentViewerTagForm.Designer.cs">
+      <DependentUpon>UC_DocumentViewerTagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UC_WebBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UC_WebBrowser.Designer.cs">
+      <DependentUpon>UC_WebBrowser.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ada.Log.Entities\Ada.Log.Entities.csproj">
+      <Project>{5f0e76b4-efb6-4d36-8476-1599cfd6f3b6}</Project>
+      <Name>Ada.Log.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.Log\Ada.Log.csproj">
+      <Project>{2227c382-2454-4ebe-b8d0-15af33d01562}</Project>
+      <Name>Ada.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.Repositories\Ada.Repositories.csproj">
+      <Project>{3a99246c-3868-4b96-bb55-f4e78b394a76}</Project>
+      <Name>Ada.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.ProgressManagement.Xaml\Ada.UI.Wpf.ProgressManagement.Views.csproj">
+      <Project>{8a639b1b-62c8-42d0-9d85-57912868b563}</Project>
+      <Name>Ada.UI.Wpf.ProgressManagement.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.ProgressManagement\Ada.UI.Wpf.ProgressManagement.csproj">
+      <Project>{a5399344-e5e8-4d58-88c0-414ba21edbb8}</Project>
+      <Name>Ada.UI.Wpf.ProgressManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.StartWindow\Ada.UI.Wpf.StartWindow.csproj">
+      <Project>{C3A251B2-E671-496D-AA86-ED30A3814601}</Project>
+      <Name>Ada.UI.Wpf.StartWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.TableIndexViewer.Views\Ada.UI.Wpf.TableIndexViewer.Views.csproj">
+      <Project>{ca8693be-0a9c-49c3-a0ba-2d4f932e988f}</Project>
+      <Name>Ada.UI.Wpf.TableIndexViewer.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.WorkspaceCleanUp.Views\Ada.UI.Wpf.WorkspaceCleanUp.Views.csproj">
+      <Project>{7489d64c-5863-4070-8de5-623469bbc3ea}</Project>
+      <Name>Ada.UI.Wpf.WorkspaceCleanUp.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.WorkspaceCleanUp\Ada.UI.Wpf.WorkspaceCleanUp.csproj">
+      <Project>{f8e0d414-3191-4c64-aac1-b7fb4a857553}</Project>
+      <Name>Ada.UI.Wpf.WorkspaceCleanUp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.UI.Wpf.TableIndexViewer\Ada.UI.Wpf.TableIndexViewer.csproj">
+      <Project>{53830426-dd08-41d4-9c0e-8f70d53ccad7}</Project>
+      <Name>Ada.UI.Wpf.TableIndexViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.Core\Ada.Core.csproj">
+      <Project>{5e104c26-9269-4eec-b910-7e3ee7c3aee9}</Project>
+      <Name>Ada.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.Common\Ra.Common.csproj">
+      <Project>{e7f28e50-cacb-4bcd-aa06-ff4be312fb4d}</Project>
+      <Name>Ra.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.DocumentInvestigator\Ra.DocumentInvestigator.csproj">
+      <Project>{cc6ded88-316e-430e-8f62-744766bf93ca}</Project>
+      <Name>Ra.DocumentInvestigator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.DomainEntities\Ra.DomainEntities.csproj">
+      <Project>{67f9fcff-7aaa-4765-ab11-12349402dd50}</Project>
+      <Name>Ra.DomainEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.EntityExtensions\Ra.EntityExtensions.csproj">
+      <Project>{abf39e6c-aac5-4889-9212-c1fe3209970b}</Project>
+      <Name>Ra.EntityExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.EntityMappings.NHibernate\Ra.EntityMappings.NHibernate.csproj">
+      <Project>{126225b6-c69b-4a69-aff5-6eeb3c3c964b}</Project>
+      <Name>Ra.EntityMappings.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.XmlEntities\Ra.XmlEntities.csproj">
+      <Project>{b1436c6b-abc3-45f9-b216-f5c3ad0c2478}</Project>
+      <Name>Ra.XmlEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateFileIndexForm.resx">
+      <DependentUpon>CreateFileIndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectAvIdForm.resx">
+      <DependentUpon>SelectAvIdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DocumentChooser.resx">
+      <DependentUpon>UC_DocumentChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_ContextDocumentViewer.resx">
+      <DependentUpon>UC_ContextDocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DocumentViewer.resx">
+      <DependentUpon>UC_DocumentViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DocumentViewerForm.resx">
+      <DependentUpon>UC_DocumentViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_DocumentViewerTagForm.resx">
+      <DependentUpon>UC_DocumentViewerTagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UC_WebBrowser.resx">
+      <DependentUpon>UC_WebBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bek1007.mht">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Brugervejledning.mht">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Krone_blaa.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

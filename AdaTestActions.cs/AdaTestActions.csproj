@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CFC85970-79D4-4117-8C34-80980DFEEA95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdaTestActions</RootNamespace>
+    <AssemblyName>AdaTestActions</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="IngestActions\AdaSingleQuery.cs" />
+    <Compile Include="IngestActions\AdaXmlIngest.cs" />
+    <Compile Include="IngestActions\ArchiveIndexIngest.cs" />
+    <Compile Include="IngestActions\ContextDocumentationIngest.cs" />
+    <Compile Include="IngestActions\DocumentIndexIngest.cs" />
+    <Compile Include="IngestActions\FileIndexIngestAction.cs" />
+    <Compile Include="IngestActions\GeoDataIngest.cs" />
+    <Compile Include="IngestActions\GmlAction.cs" />
+    <Compile Include="IngestActions\Md5Ingest.cs" />
+    <Compile Include="IngestActions\StructureIngest.cs" />
+    <Compile Include="IngestActions\TableIndexIngest.cs" />
+    <Compile Include="IngestActions\TableIngest.cs" />
+    <Compile Include="IngestActions\TiffIngest.cs" />
+    <Compile Include="IngestActions\XmlEventLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestActions\DocIndexIntegrityCheck.cs" />
+    <Compile Include="TestActions\DocumentRelationTest.cs" />
+    <Compile Include="TestActions\DocumentSystemFileRelationTest.cs" />
+    <Compile Include="TestActions\ForeignKeyTest.cs" />
+    <Compile Include="TestActions\FunctionalDescriptionTest.cs" />
+    <Compile Include="TestActions\PrimaryKeyTest.cs" />
+    <Compile Include="TestActions\RewriteFileindex.cs" />
+    <Compile Include="TestActions\RewriteXsd.cs" />
+    <Compile Include="TestActions\TableIngestPreCheckAction.cs" />
+    <Compile Include="TestActions\TestAvailableDiskSpace.cs" />
+    <Compile Include="TestActions\TestDateTimeOuterLimits.cs" />
+    <Compile Include="TestActions\TestDocFolderDuplicates.cs" />
+    <Compile Include="TestActions\TestSchemaVersion.cs" />
+    <Compile Include="TestActions\ViewTest.cs" />
+    <Compile Include="TestActions\XmlIngestPrimerAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ada.ActionBase\Ada.ActionBase.csproj">
+      <Project>{9c1df36e-2f87-405a-8c59-db6ca6a4a067}</Project>
+      <Name>Ada.ActionBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.Log\Ada.Log.csproj">
+      <Project>{2227c382-2454-4ebe-b8d0-15af33d01562}</Project>
+      <Name>Ada.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ada.Repositories\Ada.Repositories.csproj">
+      <Project>{3a99246c-3868-4b96-bb55-f4e78b394a76}</Project>
+      <Name>Ada.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.Common\Ra.Common.csproj">
+      <Project>{e7f28e50-cacb-4bcd-aa06-ff4be312fb4d}</Project>
+      <Name>Ra.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ra.DomainEntities\Ra.DomainEntities.csproj">
+      <Project>{67f9fcff-7aaa-4765-ab11-12349402dd50}</Project>
+      <Name>Ra.DomainEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

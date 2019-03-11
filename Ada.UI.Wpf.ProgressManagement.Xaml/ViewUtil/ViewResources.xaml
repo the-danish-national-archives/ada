@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:viewUtil1="clr-namespace:Ada.UI.Wpf.ProgressManagement.ViewUtil;assembly=Ada.UI.Wpf.ProgressManagement"
+                    d1p1:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary
+            Source="pack://application:,,,/Ada.UI.Wpf.ProgressManagement.Views;component/ViewUtil/ViewUtilsResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <viewUtil1:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+
+    <Style x:Key="CollapsedOnEmpty" TargetType="FrameworkElement">
+        <Setter Property="Visibility" Value="Collapsed" />
+    </Style>
+
+
+    <Style x:Key="TextBoxInErrorStyle" TargetType="{x:Type TextBox}">
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="ToolTip"
+                        Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={x:Static RelativeSource.Self}}" />
+                <Setter Property="Background" Value="Red" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MarkableLabel" TargetType="{x:Type TextBox}">
+        <Setter Property="IsManipulationEnabled" Value="False" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+
+</ResourceDictionary>

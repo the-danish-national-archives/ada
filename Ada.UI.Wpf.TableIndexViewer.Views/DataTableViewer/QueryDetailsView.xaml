@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Ada.UI.Wpf.TableIndexViewer.Views.DataTableViewer.QueryDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpfUtils="clr-namespace:Ra.Common.Wpf.Utils;assembly=Ra.Common.Wpf"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:sqlEditor="clr-namespace:Ada.UI.Wpf.TableIndexViewer.DataTableViewer.SqlEditor;assembly=Ada.UI.Wpf.TableIndexViewer"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{Binding QueryViewModelView, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Ada.UI.Wpf.TableIndexViewer.Views;component/ViewUtil/ViewResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <StackPanel
+            Visibility="{Binding HasName, Converter={x:Static wpfUtils:BooleanToVisibilityConverter.AsCollapsed}, Mode=OneWay}">
+            <Label Content="{lex:Loc QueryName}" />
+            <TextBlock Text="{Binding Name}" />
+        </StackPanel>
+        <StackPanel
+            Visibility="{Binding HasDescription, Converter={x:Static wpfUtils:BooleanToVisibilityConverter.AsCollapsed}, Mode=OneWay}">
+            <Label Content="{lex:Loc QueryDescription}" />
+            <TextBlock Text="{Binding Description}" />
+        </StackPanel>
+        <StackPanel>
+            <Label Content="{lex:Loc Query}" />
+            <sqlEditor:SqlEditor Background="{x:Null}"
+                                 IsEnabled="False"
+                                 HorizontalAlignment="Stretch"
+                                 Text="{Binding Query}"
+                                 TableIndex="{Binding TableIndex}"
+                                 BorderThickness="0"
+                                 HorizontalScrollBarVisibility="Disabled"
+                                 VerticalScrollBarVisibility="Disabled" />
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

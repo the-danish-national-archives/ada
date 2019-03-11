@@ -1,0 +1,940 @@
+<?xml version="1.0"?>
+
+<ArrayOfLogEntryType xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LogEntryType>
+    <EntryTypeId>0.1</EntryTypeId>
+    <EntryText>Uventet fejl i {Module}¤{Exception}</EntryText>
+    <Severity>3</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>0.2</EntryTypeId>
+    <EntryText>Uventet fejl ved læsning af * {FileName}¤{Exception}</EntryText>
+    <Severity>3</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>0.3</EntryTypeId>
+    <EntryText>Der er ikke plads nok på {DriveName}¤Test kan ikke afvikles før der er mindst {SpaceNeeded} MB fri plads på drevet.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>0.4</EntryTypeId>
+    <EntryText>Fejl ved genskrivning af fileIndex</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_1</EntryTypeId>
+    <EntryText>Primærnøglefejl, nøgle er ikke unik {ConstraintName}, {TableName}, [{ColumnNames}] antallet af nøglefejl udgør {Percent} % ({Count} ud af {TotalRows}) </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_2</EntryTypeId>
+    <EntryText>Primærnøglefejl, nøgle indeholder felter med NULL-værdi {ConstraintName}, {TableName}, [{ColumnNames}] antallet af nøglefejl udgør {Percent} % ({Count} ud af {TotalRows}) </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_3</EntryTypeId>
+    <EntryText>Primærnøglefejl. Nøgle begynder eller afslutter med et blanktegn {ConstraintName}, {TableName}, [{ColumnNames}] antallet af nøglefejl udgør {Percent} % ({Count} ud af {TotalRows}) </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_5</EntryTypeId>
+    <EntryText>Fremmednøglefejl, manglende reference til primærnøgle {ConstraintName} på fremmednøgle i tabellen {TableName}, [{ColumnNames}] antallet af nøglefejl udgør {Percent} % ({Count} ud af {TotalRows})  </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_6</EntryTypeId>
+    <EntryText>Fremmednøglefejl i tabellen {TableName}. Nøglen refererer ikke til hele primærnøglen. Feltet {Column} fra tabellen {ReferencedTable} mangler i fremmednøglen {ConstraintName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_7</EntryTypeId>
+    <EntryText>Fremmednøglefejl i tabellen {TableName}. Fejl i opmærkning. Referencen {Column} i nøglen {ConstraintName} indgår ikke i primærnøglen i den refererede tabel {ReferencedTable}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_8</EntryTypeId>
+    <EntryText>Fremmednøglefejl. Manglende overensstemmelse mellem datatyper i {ConstraintName}: {TableName}, {Column} ({ColumnType}) matcher ikke {ReferencedTable}, {ReferencedColumn} ({ReferencedColumnType})</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_10</EntryTypeId>
+    <EntryText>Fremmednøglefejl. Nøgle begynder eller afslutter med et blanktegn {ConstraintName}, {TableName}, [{ColumnNames}] antallet af nøglefejl udgør {Percent} % ({Count} ud af {TotalRows}) </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.A_1_11</EntryTypeId>
+    <EntryText>Tomme fremmednøgler i {ConstraintName} i tabellen {TableName}, [{ColumnNames}] . {Count} tomme fremmednøgler ud af i alt {TotalRows} rækker, {Percent} %. </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.1_1</EntryTypeId>
+    <EntryText>Første medie findes ikke</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.1_2</EntryTypeId>
+    <EntryText>Der findes {Count} medier med samme medieløbenummer {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.1_3</EntryTypeId>
+    <EntryText>Der er en fejl i rækkefølgen af medier. Medie {Gap} mangler</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_1</EntryTypeId>
+    <EntryText>Der mangler en Indices mappe på første medie</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_2</EntryTypeId>
+    <EntryText>Der mangler en Schemas mappe på første medie</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_3</EntryTypeId>
+    <EntryText>Der mangler en ContextDocumentation mappe på første medie</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_4</EntryTypeId>
+    <EntryText>Der mangler en Tables mappe i afleveringen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_5</EntryTypeId>
+    <EntryText>Der findes en Indices mappe på medie {MedieNumber}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_6</EntryTypeId>
+    <EntryText>Der findes en Schemas mappe på medie {MedieNumber} </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_7</EntryTypeId>
+    <EntryText>Der findes en ContextDocumentation mappe på medie {MedieNumber} </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_8</EntryTypeId>
+    <EntryText>Der findes en Documents mappe på medie {MedieNumber} </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.B.2_9</EntryTypeId>
+    <EntryText>Der findes en Tables mappe på medie {MedieNumber} </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C_1</EntryTypeId>
+    <EntryText>Der mangler en fileIndex.xml i arkiveringsversionen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C_2</EntryTypeId>
+    <EntryText>Der mangler en archiveIndex.xml i arkiveringsversionen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C_3</EntryTypeId>
+    <EntryText>Der mangler en contextDocumentationIndex.xml i arkiveringsversionen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C_4</EntryTypeId>
+    <EntryText>Der mangler en tableIndex.xml i arkiveringsversionen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C_5</EntryTypeId>
+    <EntryText>Der mangler en docIndex.xml i arkiveringsversionen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_1</EntryTypeId>
+    <EntryText>fileIndex.xml er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_2</EntryTypeId>
+    <EntryText>fileIndex.xml er ikke validt¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_3</EntryTypeId>
+    <EntryText>archiveIndex.xml er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_4</EntryTypeId>
+    <EntryText>archiveIndex.xml er ikke validt¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_5</EntryTypeId>
+    <EntryText>contextDocumentationIndex.xml er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_6</EntryTypeId>
+    <EntryText>contextDocumentationIndex.xml er ikke validt¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_7</EntryTypeId>
+    <EntryText>tableIndex.xml er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_8</EntryTypeId>
+    <EntryText>tableIndex.xml er ikke validt¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_9</EntryTypeId>
+    <EntryText>docIndex.xml er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_10</EntryTypeId>
+    <EntryText>docIndex.xml er ikke validt¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_11</EntryTypeId>
+    <EntryText>xml-filens indkodning er ikke angivet til UTF8 i {Path}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.1_12</EntryTypeId>
+    <EntryText>xml-filen * {Path} * starter ikke med en XML-deklaration  </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.2_1</EntryTypeId>
+    <EntryText>Filen * {Path} * er opmærket i fileIndex.xml, men findes ikke i afleveringen</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.2_2</EntryTypeId>
+    <EntryText>Filen * {Path} * findes i afleveringen, men er ikke opmærket i fileIndex.xml</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.2_3</EntryTypeId>
+    <EntryText>Filen * {Path} * har ikke den forventede MD5-værdi: {MD5}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.2_4</EntryTypeId>
+    <EntryText>Filen * {Path} * som er opmærket i fileIndex.xml, stemmer ikke overens med arkiveringsversionens ID.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.2_5</EntryTypeId>
+    <EntryText>Filen * {Path} * som er opmærket i fileIndex.xml er opmærket mere end en gang.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.4_1</EntryTypeId>
+    <EntryText>Der er ikke opmærket nogen dokumentkategori for dokumentet "{Title}" ({DocId}) </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.5_1</EntryTypeId>
+    <EntryText>Tabel(len/lerne) {TableNames} har ingen relation til andre tabeller i arkiveringsversionen</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.5_2</EntryTypeId>
+    <EntryText>Primærnøglefeltet {ColumnName} ({ColumnNumber}) er opmærket som NULLABLE i tabellen {TableName} * {FolderName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.5_3</EntryTypeId>
+    <EntryText>Der findes {Count} tabeller med navnet {TableName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_1</EntryTypeId>
+    <EntryText>Arkiveringsversionen har {NestedDocCount} indlejrede ud af i alt {DocCount} dokumenter ({Percentage} %)</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_2</EntryTypeId>
+    <EntryText>Referencen til GML-filens skema er ikke opmærket korrekt {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_3</EntryTypeId>
+    <EntryText>Der er {Orphans} ud af {Count} ({OrphansPercentage}%) dokumenter i dokumentindekset, som refererer til et ikke-eksisterende forældredokument</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_4</EntryTypeId>
+    <EntryText>Der findes et dokument ({dID}) i dokumentindekset, der indgår i en selvrefererende løkke</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_5</EntryTypeId>
+    <EntryText>{Count} dokumenter i dokumentindekset, heraf {Orphans} ({OrphansPercentage}%) der ikke refereres til i tabeldata</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_6</EntryTypeId>
+    <EntryText>{Count} dokumentreferencer i tabeldata, heraf {Orphans} ({OrphansPercentage}%) der ikke refereres til i dokumentindekset</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_7</EntryTypeId>
+    <EntryText>Der findes flere opmærkninger i dokumentindekset med samme ID ({dID})</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.C.6_8</EntryTypeId>
+    <EntryText>Der findes  {Orphans} ({OrphansPercentage}%) dokumenter, som kun kan relateres til tabeldata via &lt;pID&gt;opmærkning i docIndex.xml</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_1</EntryTypeId>
+    <EntryText>Tabelmappen * {FolderName} * findes i afleveringen, men er ikke opmærket i tableIndex.xml</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_2</EntryTypeId>
+    <EntryText>Der er i tableIndex.xml angivet, at der er en {TableName}. Denne er ikke til stede i arkiveringsversionen.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_3</EntryTypeId>
+    <EntryText>Fejl i opmærkning af tabeller i tableIndex.xml: Tabelmapper er ikke opmærket fortløbende.¤{MissingTables} mangler</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_4</EntryTypeId>
+    <EntryText>Fejl i opmærkning af tabeller i tableIndex.xml: Første mappenummer starter ikke med "1"</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_5</EntryTypeId>
+    <EntryText>Fejl i navngivning af tabeller i afleveringen: Tabelmapperne er ikke fortløbende.¤{MissingTables} mangler</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_6</EntryTypeId>
+    <EntryText>Der findes en tom tabelmappe * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_7</EntryTypeId>
+    <EntryText>Navngivningen på tabelfilen i * {Path} * er ikke udført korrekt</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_8</EntryTypeId>
+    <EntryText>Tabellen '{Path}' er ikke well-formed¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_9</EntryTypeId>
+    <EntryText>Tabellen '{Path}' er ikke valid¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_11</EntryTypeId>
+    <EntryText>Tabellen {TableName} har et datofelt {ColumnName} af typen {ColumnType} med yderdatoerne {MinValue} - {MaxValue}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_12</EntryTypeId>
+    <EntryText>Tabellen {Table} indeholder foran- eller efterstillede blanktegn i {Count} rækker i kolonne {Column}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_13</EntryTypeId>
+    <EntryText>Tabellen * {Path} * er ikke opmærket med det korrekte rodelement.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.D_14</EntryTypeId>
+    <EntryText>Tabellen * {Path} * er ikke opmærket korrekt. Angivelsen af tegnsæt er forkert.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_1</EntryTypeId>
+    <EntryText>Der findes uvedkommende objekter i mappen ContextDocumentation: {ObjectName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_2</EntryTypeId>
+    <EntryText>Mappen ContextDocumentation indeholder en tom dokumentsamlingsmappe: * {FolderName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_3</EntryTypeId>
+    <EntryText>Mappen ContextDocumentation indeholder ingen dokumentsamlingsmapper</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_4</EntryTypeId>
+    <EntryText>Der er {Gaps} fejl i navngivningen af dokumentsamlingsmapperne i ContextDocumentation</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_5</EntryTypeId>
+    <EntryText>Et dokument i ContextDocumentation er opmærket forkert * {FileName}{</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_6</EntryTypeId>
+    <EntryText>Der findes et dokument som er opmærket i contextDocumentationIndex.XML, men som ikke findes i mappen * {Path} * (DokId {DocID})</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_7</EntryTypeId>
+    <EntryText>Der findes et dokument i contextdocumentationmappen som ikke er opmærket i contextDocumentationIndex.XML "{Path}"</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_9</EntryTypeId>
+    <EntryText>Der findes ikke tilladte filformater i ContextDocumentation: * {Path}\{FileName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_10</EntryTypeId>
+    <EntryText>Dokumentsamlingsmappen * {FolderName} * i ContextDocumentation indeholder flere dokumenter end tilladt: {Count}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_11</EntryTypeId>
+    <EntryText>Dokumentsamlingsmappen * {Path} * indeholder blandede filtyper</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_12</EntryTypeId>
+    <EntryText>Der findes {Count} kontekstdokumenter med samme ID: {DocumentID}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_13</EntryTypeId>
+    <EntryText>Der findes et spring i siderækkefølge af et single pages dokument i ContextDocumentation {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.E_14</EntryTypeId>
+    <EntryText>ContextDocumentationmappen * {Path} * er tom</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_1</EntryTypeId>
+    <EntryText>Der mangler en skemamappe: {folderName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_2</EntryTypeId>
+    <EntryText>Der findes et uvedkommende objekt '{Name}' i skemamappen {Folder}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_3</EntryTypeId>
+    <EntryText>ArchiveIndex.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_4</EntryTypeId>
+    <EntryText>ContextDocumentationIndex.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_5</EntryTypeId>
+    <EntryText>TableIndex.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_6</EntryTypeId>
+    <EntryText>FileIndex.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_7</EntryTypeId>
+    <EntryText>DocIndex.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.F_8</EntryTypeId>
+    <EntryText>XmlSchema.xsd er ikke identisk med gældende skema. Denne udgave af ADA forudsætter version {Version} for at kunne teste</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_1</EntryTypeId>
+    <EntryText>Mappen Documents indeholder uvedkommende objekter, {ObjectName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_2</EntryTypeId>
+    <EntryText>Mappen Documents indeholder en tom dokumentsamlingsmappe: * {FolderName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_3</EntryTypeId>
+    <EntryText>Mappen Documents indeholder ingen dokumentsamlingsmapper.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_4</EntryTypeId>
+    <EntryText>Dokumentsamlingsmapper i Documents er ikke navngivet korrekt (fortløbende nummererede startende fra 1)</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_6</EntryTypeId>
+    <EntryText>Der findes {Count} dokumenter som er opmærket i docIndex.xml, men som ikke findes i Documents</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_7</EntryTypeId>
+    <EntryText>Der findes dokumenter i Documents, som ikke er opmærket i docIndex.xml {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_9</EntryTypeId>
+    <EntryText>Der findes ikke tilladte filformater i Documents * {Path}\{FileName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_11</EntryTypeId>
+    <EntryText>Dokumentsamlingsmappe i Documents indeholder flere filer end tilladt: {Count} filer</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_12</EntryTypeId>
+    <EntryText>Dokumentsamlingsmappen * {Path} * indeholder blandede filtyper</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_13</EntryTypeId>
+    <EntryText>Der findes {Count} dokumentmapper med samme ID: {DocumentID}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_14</EntryTypeId>
+    <EntryText>Der findes et spring i siderækkefølge af et single pages dokument * {Path} * </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>4.G_15</EntryTypeId>
+    <EntryText>
+      Antallet af dokumenter i arkiveringsversion = {AllCount}
+      Heraf:
+      Antallet af digitale dokumenter: TIFF ({TifCount}) - JPEG-2000 ({Jp2Count})
+      Antallet af lyd og video dokumenter:  MP3 ({Mp3Count}) -  WAV ({WavCount}) - MPEG ({MpgCount})
+      Antallet af geodata dokumenter: GML ({GmlCount})
+    </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_2</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * overholder ikke standardformatet j.f. bek. 5.E.1.a.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_3</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * overholder ikke kravet til kompression j.f. bek.5.E.2. Anvendt {CompressionType}.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_5</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * har skæv DPI.</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <!--  <LogEntryType>-->
+  <!--    <EntryTypeId>5.E_7</EntryTypeId>-->
+  <!--    <EntryText>Dokumentet {DocumentID}, * {Path} * indeholder private tags.</EntryText>-->
+  <!--    <Severity>2</Severity>-->
+  <!--  </LogEntryType>-->
+  <LogEntryType>
+    <EntryTypeId>5.E_7</EntryTypeId>
+    <EntryText>{Count} dokumenter i * {Folder} * indeholder private tags.</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_10</EntryTypeId>
+    <EntryText>Dokumentet {DocumentID}, * {Path} * indeholder en blank første side.</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <!--  <LogEntryType>-->
+  <!--    <EntryTypeId>5.E_10_1</EntryTypeId>-->
+  <!--    <EntryText>Dokumentet {DocumentID}, * {Path} * indeholder en blank side (s. {Page}).</EntryText>-->
+  <!--    <Severity>2</Severity>-->
+  <!--  </LogEntryType>-->
+  <LogEntryType>
+    <EntryTypeId>5.E_11</EntryTypeId>
+    <EntryText>Dokumentet {DocumentID}, * {Path} * har intet indhold.</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_12</EntryTypeId>
+    <EntryText>Indholdet af dokumentet {DocumentID}, * {Path} * er ikke i overensstemmelse med den ekstension, som er angivet.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_13</EntryTypeId>
+    <EntryText>Dokument {DocumentID}, indeholder {PageCount} sider! {Path}"</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.E_14</EntryTypeId>
+    <EntryText>Dokument {DocumentID} kan ikke indlæses grundet hukommelsesfejl! {Path}"</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.F_1</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * overholder ikke kravet til lydformat</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.F_2</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * overholder ikke kravet til lydformat</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.F_3</EntryTypeId>
+    <EntryText>Dokumentet, {DocumentID}, * {Path} * overholder ikke kravet til videoformat</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.F_4</EntryTypeId>
+    <EntryText>Indholdet af dokumentet {DocumentID}, * {Path} * er ikke i overensstemmelse med den ekstension, som er opgivet</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_1</EntryTypeId>
+    <EntryText>OGC-Skemaet {Name} mangler</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_2</EntryTypeId>
+    <EntryText>Skemaet {Name} mangler</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_3</EntryTypeId>
+    <EntryText>OGC-Skemaet {Name} har ikke den forventede checksum</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_4</EntryTypeId>
+    <EntryText>GML-Skemaet * {Path} * er ikke validt.¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_5</EntryTypeId>
+    <EntryText>GML-Skemaet * {Path} * er ikke well-formed.¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_6</EntryTypeId>
+    <EntryText>Skemaet * {Path} * er ikke opmærket korrekt. Angivelsen af tegnsæt er forkert.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_8</EntryTypeId>
+    <EntryText>Import af OGC-namespace er ikke opmærket korrekt i skemaet * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_9</EntryTypeId>
+    <EntryText>Der er ikke opmærket et GEOMETRI element i det lokale skema * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_10</EntryTypeId>
+    <EntryText>Geometrielementet i * {Path} * indeholder ikke en reference "gml:_Feature".</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_11</EntryTypeId>
+    <EntryText>Der mangler en beskrivelse for anvendelsen af det lokale skema: * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_12</EntryTypeId>
+    <EntryText>Det lokale skema * {Path} * nedarver ikke fra gml:AbstractFeatureType.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_13</EntryTypeId>
+    <EntryText>Der er ikke opmærket features i det lokale skema * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_14</EntryTypeId>
+    <EntryText>Der mangler en beskrivelse for en feature i skemaet * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_15</EntryTypeId>
+    <EntryText>Der er ikke opmærket en geometri i det lokale skema * {Path}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_16</EntryTypeId>
+    <EntryText>Filen * {Path} * overholder ikke kravet til max størrelse af GML-filer</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_17</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er ikke well-formed.¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_18</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er ikke valid.¤{XmlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_19</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er ikke opmærket med en korrekt sti til det lokale skema</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_20</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er ikke opmærket korrekt. Angivelsen af tegnsæt er forkert.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_22</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er ikke opmærket med det korrekte rodelement.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_23</EntryTypeId>
+    <EntryText>Opmærkningen af namespaces i GML-filen * {Path} * er ikke korrekt.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_24</EntryTypeId>
+    <EntryText>GML-filen * {Path} * har opmærket et forkert datum.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_25</EntryTypeId>
+    <EntryText>GML-filen * {Path} * har opmærket en forkert dimension.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_26</EntryTypeId>
+    <EntryText>GML-filen * {Path} * er opmærket med afvigende ydergrænser i gml:boundedBy</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_27</EntryTypeId>
+    <EntryText>GML-filen * {Path} * indeholder ikke en gml:featureMember</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_28</EntryTypeId>
+    <EntryText>GML-filen * {Path} * indeholder ikke en geometri</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_29</EntryTypeId>
+    <EntryText>GML-filens * {Path} * geometri afviger fra det erklærede standardområde</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>5.G_31</EntryTypeId>
+    <EntryText>GML-filen * {Path} * starter ikke med en XML-deklaration</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_1</EntryTypeId>
+    <EntryText>Uoverensstemmelse mellem arkiveringsversionens ID ({ActualId}) og dens opmærkede ID i archiveindex.xml ({AnnotatedId})</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_2</EntryTypeId>
+    <EntryText>Startdato ({StartDate}) og slutdato ({EndDate}) for archivePeriod er ikke opmærket korrekt i archiveindex.xml </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_3</EntryTypeId>
+    <EntryText>Startdato ({StartDate}) og slutdato ({EndDate}) for creationPeriod er ikke opmærket korrekt i archiveindex.xml</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_6</EntryTypeId>
+    <EntryText>Der mangler en opmærkning i functionalDescription for dokumentinformationen DokumentTitel</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_8</EntryTypeId>
+    <EntryText>Opmærkningen '{Record}' i relatedRecordsName er ikke valid</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_8_1</EntryTypeId>
+    <EntryText>SearchRelatedOtherRecords er sat til true, men relatedRecordsName er ikke opmærket</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_9</EntryTypeId>
+    <EntryText>Der er uoverensstemmelse mellem opmærkningen af searchRelatedOtherRecords og relatedRecordsName</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.A_7</EntryTypeId>
+    <EntryText>Arkiveringsversionens indeholder ifølge archiveIndex.xml et sagsbegreb, men der mangler opmærkning af sagsidentifikation eller sagstitel i tabeldata.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_1</EntryTypeId>
+    <EntryText>Beskrivelsen "{TableDescription}" af tabellen {TableName} * {FolderName} * er ikke fyldestgørende</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_2</EntryTypeId>
+    <EntryText>Der findes {Count} kolonner med samme navn "{ColumnName}" i tabellen {TableName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_3</EntryTypeId>
+    <EntryText>Der findes kolonner der har samme kolonneId. Værdien {ColumnID} optræder {Count} gange i tabellen {TableName}.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_4</EntryTypeId>
+    <EntryText>Der findes kolonner i {TableName} ({FolderNumber}) som bryder med rækkefølgen </EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_5</EntryTypeId>
+    <EntryText>Beskrivelsen "{ColumnDescription}" af kolonnen {ColumnName} i tabellen {TableName} er ikke fyldestgørende</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_6</EntryTypeId>
+    <EntryText>Primærnøglen {ConstraintName} i tabellen {TableName} * {FolderName} * er ikke navngivet unikt.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_7</EntryTypeId>
+    <EntryText>Fremmednøglen {ConstraintName} i tabellen {TableName} * {FolderName} * er ikke navngivet unikt.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_8</EntryTypeId>
+    <EntryText>Den egenproducerede forespørgsel {ViewName} er mangelfuldt beskrevet.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_9</EntryTypeId>
+    <EntryText>Der findes {Count} SQL forespørgsler i tableIndex.xml navngivet med præfix AV</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_10</EntryTypeId>
+    <EntryText>Navngivningen af forespørgslen {ViewName} er ikke unik</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_12</EntryTypeId>
+    <EntryText>Den egenproducerede forespørgsel {ViewName} kan ikke afvikles¤{SqlError}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_13</EntryTypeId>
+    <EntryText>Der er opmærket {FunctionalDescription} i tabeldata, men der er ikke angivet i archiveIndex.xml at arkiveringsversionen indeholder et sagsbegreb.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_14</EntryTypeId>
+    <EntryText>Der er opmærket dokumentidentifikation i tabeldata, men der er ikke angivet i archiveIndex.xml at arkiveringsversionen indeholder digitale dokumenter.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_14_1</EntryTypeId>
+    <EntryText>Arkiveringsversionens indeholder ifølge archiveIndex.xml digitale dokumenter, men der er ingen opmærkning af dokumentidentifikation i tabeldata.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_16</EntryTypeId>
+    <EntryText>{Count} række(r) i kolonne {Column} i {Table}, har ugyldigt indhold (opmærket som Lagringsform)</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_17</EntryTypeId>
+    <EntryText>Der mangler opmærkning af 'typeOriginal' i {Count} kolonner</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_18</EntryTypeId>
+    <EntryText>Den egenproducerede forespørgsel {ViewName} indeholder uønsket SQL</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_14_2</EntryTypeId>
+    <EntryText>Forekomst af feltfunktioner :¤¤{ListOfNames}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_19</EntryTypeId>
+    <EntryText>Den refererede tabel {ReferencedTable} i fremmednøglen {ConstraintName} i tabellen {TableName} findes ikke i tableIndex.xml</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_20</EntryTypeId>
+    <EntryText>Det opmærkede felt {ColumnName} i primærnøglen {ConstraintName} findes ikke i tabellen {TableName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_21</EntryTypeId>
+    <EntryText>Den opmærkede reference {ColumnName} i fremmednøglen {ConstraintName} i  {TableName} findes ikke i den refererede tabel {ReferencedTableName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_22</EntryTypeId>
+    <EntryText>Det opmærkede felt {ColumnName} i fremmednøglen {ConstraintName} findes ikke i tabellen {TableName}</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_23</EntryTypeId>
+    <EntryText>Arkiveringsversionen indeholder dokumenter, men der findes ingen opmærkning for "dokumentDato"</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_24</EntryTypeId>
+    <EntryText>Tabellen {TableName} har et datofelt {ColumnName} for dokumenter af typen {ColumnType} med yderdatoerne {MinValue} - {MaxValue}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_25</EntryTypeId>
+    <EntryText>Max feltlængde opgivet i tableIndex.xml for {TableName}, {ColumnName} er mindre end den faktiske længde i tabelinstansen. Max feltlængde i xml-tabellen er {ColumnLength}</EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_26</EntryTypeId>
+    <EntryText>Antallet af rækker i tabellen {TableName} ({ActualRowCount}) stemmer ikke overens med antallet af rækker opmærket i TableIndex.xml ({ExpectedRowCount})</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_27</EntryTypeId>
+    <EntryText>Mappenavnet * {FolderName} * i tabellen {TableName} er ikke gyldigt</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_28</EntryTypeId>
+    <EntryText>{EntityName} opfylder ikke kravene til en SQL-identifier. Navnet {Value} er et reserveret ord, der ikke må benyttes.</EntryText>
+    <Severity>1</Severity>
+  </LogEntryType>
+  <LogEntryType>
+    <EntryTypeId>6.C_29</EntryTypeId>
+    <EntryText>
+      Antallet af dokumenter med dokID
+      99999991 = {Count1}
+      99999992 = {Count2}
+      99999993 = {Count3}
+    </EntryText>
+    <Severity>2</Severity>
+  </LogEntryType>
+</ArrayOfLogEntryType>

@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="Ada.UI.Wpf.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SimultaneousSQLItemsShownMax" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="LatestQueries" Type="Ada.UI.Wpf.Model.QueryList" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MaxLatestQueries" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="FavoriteQueries" Type="Ada.UI.Wpf.Model.QueryList" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SimultaneousSQLItemsShownDefault" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

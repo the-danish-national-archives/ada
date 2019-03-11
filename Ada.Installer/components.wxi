@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+    <Component Id="CMP_Ada_Action64_dll_0" Guid="F4D9B215-6790-451E-B7FE-F50A3D8FE886">
+      <File Id="FIL_Ada_Action64_dll_0" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Action64.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Action64_dll_config_1" Guid="B2D496E9-DF55-46A0-8835-E5858F947F6E">
+      <File Id="FIL_Ada_Action64_dll_config_1" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Action64.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_ActionBase_dll_2" Guid="A04A26F1-66E5-48CD-BCFD-F141261A5D57">
+      <File Id="FIL_Ada_ActionBase_dll_2" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.ActionBase.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_ActionBase_dll_config_3" Guid="73E9A651-ACF5-4A62-ABD7-DBB30493911D">
+      <File Id="FIL_Ada_ActionBase_dll_config_3" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.ActionBase.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Actions_dll_4" Guid="5402D826-72BB-4842-A6FB-F2F6B4D310ED">
+      <File Id="FIL_Ada_Actions_dll_4" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Actions.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Actions_dll_config_5" Guid="67BABF57-A4E0-4580-BD61-7F46D6745BB4">
+      <File Id="FIL_Ada_Actions_dll_config_5" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Actions.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Checks_dll_6" Guid="1EF654E4-D253-4442-8BAB-F6CAFE386EF8">
+      <File Id="FIL_Ada_Checks_dll_6" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Checks.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Checks_dll_config_7" Guid="83C513A1-AFF6-49DA-9F80-8DB59199BD8F">
+      <File Id="FIL_Ada_Checks_dll_config_7" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Checks.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_ChecksBase_dll_8" Guid="8D9C5944-B7FB-4383-8BA8-401E0649D225">
+      <File Id="FIL_Ada_ChecksBase_dll_8" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.ChecksBase.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_ChecksBase_dll_config_9" Guid="C7932D05-6768-488D-AB5B-5BC1BA1739E1">
+      <File Id="FIL_Ada_ChecksBase_dll_config_9" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.ChecksBase.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Core_dll_10" Guid="CCA4A30B-D98F-4FAE-BF27-24C4AE17F675">
+      <File Id="FIL_Ada_Core_dll_10" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Core.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Core_dll_config_11" Guid="85272696-10CF-47E4-A004-3ED2362E77D8">
+      <File Id="FIL_Ada_Core_dll_config_11" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Core.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_exe_12" Guid="A1FCAA18-EA94-4824-A572-D5DDC64C0845">
+      <File Id="FIL_Ada_exe_12" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.exe" />
+    </Component>
+
+    <Component Id="CMP_Ada_exe_config_13" Guid="8B5C74E1-2550-43B3-BF40-A19B655E7155">
+      <File Id="FIL_Ada_exe_config_13" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.exe.config" />
+    </Component>
+
+    <Component Id="CMP_ada_exe_licenses_14" Guid="370B2398-C9DB-48A7-BB67-AE0B270E5F05">
+      <File Id="FIL_ada_exe_licenses_14" KeyPath="yes" Source="$(var.ReleaseDir)\ada.exe.licenses" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_dll_15" Guid="AAC1F7BA-9FF5-470D-95A6-2C8276EF7A22">
+      <File Id="FIL_Ada_Log_dll_15" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_dll_config_16" Guid="F1E61FA9-8D10-4A1C-A9AD-B8529960861F">
+      <File Id="FIL_Ada_Log_dll_config_16" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_Entities_dll_17" Guid="0B5E7D61-44B1-4F17-9053-8974B8770D35">
+      <File Id="FIL_Ada_Log_Entities_dll_17" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.Entities.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_Entities_dll_config_18" Guid="14D7B6AD-2032-4885-B031-37D890C739F0">
+      <File Id="FIL_Ada_Log_Entities_dll_config_18" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.Entities.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_EntityMappings_dll_19" Guid="28F6F436-AB20-4AF1-90FC-CDD83C6DDB31">
+      <File Id="FIL_Ada_Log_EntityMappings_dll_19" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.EntityMappings.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Log_EntityMappings_dll_config_20" Guid="20977902-6227-4531-871C-526FCF0F1B0C">
+      <File Id="FIL_Ada_Log_EntityMappings_dll_config_20" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Log.EntityMappings.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_Repositories_dll_21" Guid="8BE00232-9327-4C99-8B0B-FE1FFDDBC1EB">
+      <File Id="FIL_Ada_Repositories_dll_21" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Repositories.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_Repositories_dll_config_22" Guid="462560BE-DFBC-41F9-B355-20E240319047">
+      <File Id="FIL_Ada_Repositories_dll_config_22" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.Repositories.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Winforms_dll_23" Guid="22F680AC-58E2-4204-937E-757C6554E102">
+      <File Id="FIL_Ada_UI_Winforms_dll_23" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Winforms.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Winforms_dll_config_24" Guid="57D2F54E-4E96-49E9-A7D2-5212330D595F">
+      <File Id="FIL_Ada_UI_Winforms_dll_config_24" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Winforms.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_ProgressManagement_dll_25" Guid="492A23DB-8E6A-45BB-9C43-F41BBE8F5624">
+      <File Id="FIL_Ada_UI_Wpf_ProgressManagement_dll_25" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.ProgressManagement.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_ProgressManagement_dll_config_26" Guid="70405C40-CEA5-45B2-B862-5CB20B7FB034">
+      <File Id="FIL_Ada_UI_Wpf_ProgressManagement_dll_config_26" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.ProgressManagement.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_ProgressManagement_Views_dll_27" Guid="6C5C2818-FBEE-43CB-92C2-94186E08814E">
+      <File Id="FIL_Ada_UI_Wpf_ProgressManagement_Views_dll_27" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.ProgressManagement.Views.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_ProgressManagement_Views_dll_config_28" Guid="9AA76022-D90D-4BC9-AD40-E1A0A71E2EFE">
+      <File Id="FIL_Ada_UI_Wpf_ProgressManagement_Views_dll_config_28" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.ProgressManagement.Views.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_StartWindow_dll_29" Guid="7C4E81FB-29F6-4D97-BE4D-9190B822A7C7">
+      <File Id="FIL_Ada_UI_Wpf_StartWindow_dll_29" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.StartWindow.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_StartWindow_dll_config_30" Guid="E03561DE-5A7F-41E1-9280-D54C6AE3108C">
+      <File Id="FIL_Ada_UI_Wpf_StartWindow_dll_config_30" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.StartWindow.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_dll_31" Guid="3FC9700F-C4C6-4F57-81F2-ED2E07AED260">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_dll_31" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_dll_config_32" Guid="18C94148-99EA-42BD-9100-C82EAAD69A5B">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_dll_config_32" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_ERGraph_dll_33" Guid="73B629E7-CF54-44EB-B75C-7243C6DCE618">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_ERGraph_dll_33" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.ERGraph.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_ERGraph_dll_config_34" Guid="339F5A8B-260D-4652-A76B-67542833B543">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_ERGraph_dll_config_34" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.ERGraph.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_Views_dll_35" Guid="9359C2BE-5CD0-4FE8-99C2-993D51E0CF9A">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_Views_dll_35" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.Views.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_TableIndexViewer_Views_dll_config_36" Guid="BBD8C20C-F6B7-45F6-9627-C15892762760">
+      <File Id="FIL_Ada_UI_Wpf_TableIndexViewer_Views_dll_config_36" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.TableIndexViewer.Views.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_Text_dll_37" Guid="9F2587C1-80B1-4653-8D96-2A26F40DDE62">
+      <File Id="FIL_Ada_UI_Wpf_Text_dll_37" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.Text.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_WorkspaceCleanUp_dll_38" Guid="649943B9-9E61-4C6A-BAC6-32E20FB72791">
+      <File Id="FIL_Ada_UI_Wpf_WorkspaceCleanUp_dll_38" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.WorkspaceCleanUp.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_WorkspaceCleanUp_dll_config_39" Guid="3603A88F-EB47-4104-ACB5-CD52EB969378">
+      <File Id="FIL_Ada_UI_Wpf_WorkspaceCleanUp_dll_config_39" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.WorkspaceCleanUp.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_WorkspaceCleanUp_Views_dll_40" Guid="F1080352-5B54-4F9F-81CF-6A78F4E44F26">
+      <File Id="FIL_Ada_UI_Wpf_WorkspaceCleanUp_Views_dll_40" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.WorkspaceCleanUp.Views.dll" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_WorkspaceCleanUp_Views_dll_config_41" Guid="D2286FD6-DAC3-40EF-952E-E9CE2B28816C">
+      <File Id="FIL_Ada_UI_Wpf_WorkspaceCleanUp_Views_dll_config_41" KeyPath="yes" Source="$(var.ReleaseDir)\Ada.UI.Wpf.WorkspaceCleanUp.Views.dll.config" />
+    </Component>
+
+    <Component Id="CMP_bek1007_mht_42" Guid="97A52949-C77F-46E6-885D-F8E64FFAF9C1">
+      <File Id="FIL_bek1007_mht_42" KeyPath="yes" Source="$(var.ReleaseDir)\bek1007.mht" />
+    </Component>
+
+    <Component Id="CMP_BitMiracle_LibTiff_NET_dll_43" Guid="CC57ACA9-8DF7-4EF7-BD02-6859F4E6E0AC">
+      <File Id="FIL_BitMiracle_LibTiff_NET_dll_43" KeyPath="yes" Source="$(var.ReleaseDir)\BitMiracle.LibTiff.NET.dll" />
+    </Component>
+
+    <Component Id="CMP_BitMiracle_LibTiff_NET_xml_44" Guid="2570A272-E342-49FE-BE32-DF15314EDF97">
+      <File Id="FIL_BitMiracle_LibTiff_NET_xml_44" KeyPath="yes" Source="$(var.ReleaseDir)\BitMiracle.LibTiff.NET.xml" />
+    </Component>
+
+    <Component Id="CMP_Brugervejledning_mht_45" Guid="106D7277-7D4A-4B47-B75C-6DD99C9EE0A7">
+      <File Id="FIL_Brugervejledning_mht_45" KeyPath="yes" Source="$(var.ReleaseDir)\Brugervejledning.mht" />
+    </Component>
+
+    <Component Id="CMP_CommandLine_dll_46" Guid="C775389A-1EAA-454B-B9F8-6EBEF1E92035">
+      <File Id="FIL_CommandLine_dll_46" KeyPath="yes" Source="$(var.ReleaseDir)\CommandLine.dll" />
+    </Component>
+
+    <Component Id="CMP_CommandLine_xml_47" Guid="3DDD4B7B-70AF-44EA-BF6B-E047DBE61983">
+      <File Id="FIL_CommandLine_xml_47" KeyPath="yes" Source="$(var.ReleaseDir)\CommandLine.xml" />
+    </Component>
+
+    <Component Id="CMP_CommonServiceLocator_dll_48" Guid="5401D884-BC8B-42FD-8CBA-032FD7F78151">
+      <File Id="FIL_CommonServiceLocator_dll_48" KeyPath="yes" Source="$(var.ReleaseDir)\CommonServiceLocator.dll" />
+    </Component>
+
+    <Component Id="CMP_EntityFramework_dll_49" Guid="B8761D42-75CB-4C17-8CAE-15EBD3DC68F1">
+      <File Id="FIL_EntityFramework_dll_49" KeyPath="yes" Source="$(var.ReleaseDir)\EntityFramework.dll" />
+    </Component>
+
+    <Component Id="CMP_EntityFramework_SqlServer_dll_50" Guid="066784B8-A527-408D-901D-903FCB805934">
+      <File Id="FIL_EntityFramework_SqlServer_dll_50" KeyPath="yes" Source="$(var.ReleaseDir)\EntityFramework.SqlServer.dll" />
+    </Component>
+
+    <Component Id="CMP_errortexts_xml_51" Guid="5B4B4626-90D4-4192-A0F6-4959CE22AE9C">
+      <File Id="FIL_errortexts_xml_51" KeyPath="yes" Source="$(var.ReleaseDir)\errortexts.xml" />
+    </Component>
+
+    <Component Id="CMP_FluentNHibernate_dll_52" Guid="2DA4A0D1-20A3-4683-B0C3-9F38AF8020B9">
+      <File Id="FIL_FluentNHibernate_dll_52" KeyPath="yes" Source="$(var.ReleaseDir)\FluentNHibernate.dll" />
+    </Component>
+
+    <Component Id="CMP_FluentNHibernate_xml_53" Guid="30A80D5D-DE66-4724-B436-E9433211C331">
+      <File Id="FIL_FluentNHibernate_xml_53" KeyPath="yes" Source="$(var.ReleaseDir)\FluentNHibernate.xml" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_dll_54" Guid="C31C3382-CEB2-48A8-B0ED-A36D32664867">
+      <File Id="FIL_GalaSoft_MvvmLight_dll_54" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.dll" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_Extras_dll_55" Guid="03DA8D57-DC30-471C-AD64-422D9A20239C">
+      <File Id="FIL_GalaSoft_MvvmLight_Extras_dll_55" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.Extras.dll" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_Extras_xml_56" Guid="7281605B-9D69-46FA-A242-415EDC62EC4C">
+      <File Id="FIL_GalaSoft_MvvmLight_Extras_xml_56" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.Extras.xml" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_Platform_dll_57" Guid="6B3E0486-181C-4CAC-A9DB-13498E65AA6F">
+      <File Id="FIL_GalaSoft_MvvmLight_Platform_dll_57" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.Platform.dll" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_Platform_xml_58" Guid="7AB6C98A-0743-4CC5-9361-3888B8295D72">
+      <File Id="FIL_GalaSoft_MvvmLight_Platform_xml_58" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.Platform.xml" />
+    </Component>
+
+    <Component Id="CMP_GalaSoft_MvvmLight_xml_59" Guid="39AD14A6-2ACE-4E72-B294-8960BC565A2A">
+      <File Id="FIL_GalaSoft_MvvmLight_xml_59" KeyPath="yes" Source="$(var.ReleaseDir)\GalaSoft.MvvmLight.xml" />
+    </Component>
+
+    <Component Id="CMP_GraphX_PCL_Common_dll_60" Guid="C5AD099A-6207-4104-B1CB-880ABFCC3C08">
+      <File Id="FIL_GraphX_PCL_Common_dll_60" KeyPath="yes" Source="$(var.ReleaseDir)\GraphX.PCL.Common.dll" />
+    </Component>
+
+    <Component Id="CMP_GraphX_PCL_Logic_dll_61" Guid="7A9CA050-868E-4F59-805E-0578F3D382D6">
+      <File Id="FIL_GraphX_PCL_Logic_dll_61" KeyPath="yes" Source="$(var.ReleaseDir)\GraphX.PCL.Logic.dll" />
+    </Component>
+
+    <Component Id="CMP_GraphX_WPF_Controls_dll_62" Guid="3E284D1B-6791-4AED-96F6-523C29EC8FD1">
+      <File Id="FIL_GraphX_WPF_Controls_dll_62" KeyPath="yes" Source="$(var.ReleaseDir)\GraphX.WPF.Controls.dll" />
+    </Component>
+
+    <Component Id="CMP_ICSharpCode_AvalonEdit_dll_63" Guid="F5C6E402-A73F-4BA7-A455-ABC8972F67FF">
+      <File Id="FIL_ICSharpCode_AvalonEdit_dll_63" KeyPath="yes" Source="$(var.ReleaseDir)\ICSharpCode.AvalonEdit.dll" />
+    </Component>
+
+    <Component Id="CMP_ICSharpCode_AvalonEdit_xml_64" Guid="16832B82-38D2-485F-84C8-5160B6BD58E5">
+      <File Id="FIL_ICSharpCode_AvalonEdit_xml_64" KeyPath="yes" Source="$(var.ReleaseDir)\ICSharpCode.AvalonEdit.xml" />
+    </Component>
+
+    <Component Id="CMP_Iesi_Collections_dll_65" Guid="3CE586E4-AAF9-4FB3-9189-833E7A29AE54">
+      <File Id="FIL_Iesi_Collections_dll_65" KeyPath="yes" Source="$(var.ReleaseDir)\Iesi.Collections.dll" />
+    </Component>
+
+    <Component Id="CMP_Iesi_Collections_xml_66" Guid="B9B31E6C-0B29-4A9D-9543-2670C6BC2A89">
+      <File Id="FIL_Iesi_Collections_xml_66" KeyPath="yes" Source="$(var.ReleaseDir)\Iesi.Collections.xml" />
+    </Component>
+
+    <Component Id="CMP_IndexEntityLoaders_dll_67" Guid="00F67EB5-8BF0-4BA0-83CD-29F519FFA45C">
+      <File Id="FIL_IndexEntityLoaders_dll_67" KeyPath="yes" Source="$(var.ReleaseDir)\IndexEntityLoaders.dll" />
+    </Component>
+
+    <Component Id="CMP_IndexEntityLoaders_dll_config_68" Guid="954D77F9-BA77-4898-B626-3DA3594B9797">
+      <File Id="FIL_IndexEntityLoaders_dll_config_68" KeyPath="yes" Source="$(var.ReleaseDir)\IndexEntityLoaders.dll.config" />
+    </Component>
+
+    <Component Id="CMP_JetBrains_Annotations_dll_69" Guid="08A15984-B0D6-41FE-8520-888F9DC946D7">
+      <File Id="FIL_JetBrains_Annotations_dll_69" KeyPath="yes" Source="$(var.ReleaseDir)\JetBrains.Annotations.dll" />
+    </Component>
+
+    <Component Id="CMP_JetBrains_Annotations_xml_70" Guid="10E91486-5462-4021-97C6-E6265F58E346">
+      <File Id="FIL_JetBrains_Annotations_xml_70" KeyPath="yes" Source="$(var.ReleaseDir)\JetBrains.Annotations.xml" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Annotations_Core_dll_71" Guid="91BC010F-7EF4-4013-8CA6-37658246F16B">
+      <File Id="FIL_Leadtools_Annotations_Core_dll_71" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Annotations.Core.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Annotations_dll_72" Guid="48429776-58E6-4953-BAC3-1822D8812DA5">
+      <File Id="FIL_Leadtools_Annotations_dll_72" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Annotations.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Bmp_dll_73" Guid="A898CACE-AFC9-48E4-B912-7EF70BE64BC1">
+      <File Id="FIL_Leadtools_Codecs_Bmp_dll_73" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Bmp.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Cmp_dll_74" Guid="B26D888C-9302-47FA-A31C-DF6137E7ABDB">
+      <File Id="FIL_Leadtools_Codecs_Cmp_dll_74" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Cmp.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_dll_75" Guid="70B754F7-CEAB-4CE3-A736-045C515609D6">
+      <File Id="FIL_Leadtools_Codecs_dll_75" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Fax_dll_76" Guid="DB0BC28F-2169-402E-B51F-67FBE2F61C5C">
+      <File Id="FIL_Leadtools_Codecs_Fax_dll_76" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Fax.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_J2k_dll_77" Guid="600A7255-D766-4ACF-886E-5072A9D1BE95">
+      <File Id="FIL_Leadtools_Codecs_J2k_dll_77" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.J2k.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Jbg_dll_78" Guid="147D6DA7-D32C-48B4-A41C-69690FD3C96C">
+      <File Id="FIL_Leadtools_Codecs_Jbg_dll_78" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Jbg.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Lmb_dll_79" Guid="063265CC-CDD9-4BF0-9525-EC00D272EC04">
+      <File Id="FIL_Leadtools_Codecs_Lmb_dll_79" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Lmb.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Pcx_dll_80" Guid="4E5C6B9A-FDBF-4DCC-AA7E-147040722785">
+      <File Id="FIL_Leadtools_Codecs_Pcx_dll_80" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Pcx.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Png_dll_81" Guid="32E97157-E016-4BFF-BCBD-541AD172B192">
+      <File Id="FIL_Leadtools_Codecs_Png_dll_81" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Png.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Tif_dll_82" Guid="15282882-5254-4CFB-8DBA-26F3C001BDA2">
+      <File Id="FIL_Leadtools_Codecs_Tif_dll_82" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Tif.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Txt_dll_83" Guid="D5F98129-ED91-476A-9E54-B8FD6AC07C92">
+      <File Id="FIL_Leadtools_Codecs_Txt_dll_83" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Txt.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Xbm_dll_84" Guid="49597881-0955-4380-B8EA-372FF6C15934">
+      <File Id="FIL_Leadtools_Codecs_Xbm_dll_84" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Xbm.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Codecs_Xpm_dll_85" Guid="6AFEB5EE-1547-4A02-ABDB-F053177C877A">
+      <File Id="FIL_Leadtools_Codecs_Xpm_dll_85" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Codecs.Xpm.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_ColorConversion_dll_86" Guid="FE3E7CF2-3C80-4C59-B562-503E577738E1">
+      <File Id="FIL_Leadtools_ColorConversion_dll_86" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.ColorConversion.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Dicom_dll_87" Guid="FDEEE0D5-F345-4CD8-9AB9-D18D9D47E234">
+      <File Id="FIL_Leadtools_Dicom_dll_87" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Dicom.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_dll_88" Guid="85CACE35-E4D2-4085-A5F2-CF7F7CCDC7D3">
+      <File Id="FIL_Leadtools_dll_88" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Drawing_dll_89" Guid="884935D8-39F3-4519-B894-BFD3661BFB09">
+      <File Id="FIL_Leadtools_Drawing_dll_89" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Drawing.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_ImageProcessing_Color_dll_90" Guid="0BD94519-39F7-4FAD-B87E-05CC92E122F2">
+      <File Id="FIL_Leadtools_ImageProcessing_Color_dll_90" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.ImageProcessing.Color.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_ImageProcessing_Core_dll_91" Guid="D9D27F13-AC2F-42C8-A3D5-7630653B1065">
+      <File Id="FIL_Leadtools_ImageProcessing_Core_dll_91" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.ImageProcessing.Core.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_ImageProcessing_Effects_dll_92" Guid="4A4EC1F6-A013-4386-A3D3-166D301E0801">
+      <File Id="FIL_Leadtools_ImageProcessing_Effects_dll_92" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.ImageProcessing.Effects.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_ImageProcessing_Utilities_dll_93" Guid="07DABFAC-5ECB-43A2-BEC8-62E45FEA087B">
+      <File Id="FIL_Leadtools_ImageProcessing_Utilities_dll_93" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.ImageProcessing.Utilities.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Jpeg2000_dll_94" Guid="DB2137B6-46DA-4796-AD7B-98EF21B59579">
+      <File Id="FIL_Leadtools_Jpeg2000_dll_94" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Jpeg2000.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Kernel_Annotations_dll_95" Guid="FB3EA180-C592-4D29-991E-AF6E6CA5DC62">
+      <File Id="FIL_Leadtools_Kernel_Annotations_dll_95" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Kernel.Annotations.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Medical3d_dll_96" Guid="AF56D3D6-5F93-4A0F-BEA6-866593B257A0">
+      <File Id="FIL_Leadtools_Medical3d_dll_96" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Medical3d.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_MedicalViewer_dll_97" Guid="7AB9EADF-E6F6-455F-9080-CF357D5D8A21">
+      <File Id="FIL_Leadtools_MedicalViewer_dll_97" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.MedicalViewer.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Services_dll_98" Guid="883BEA69-4791-4717-BC53-43559F10D50E">
+      <File Id="FIL_Leadtools_Services_dll_98" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Services.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_WinForms_dll_99" Guid="DFD378DB-7D1A-4B6C-9325-722B84A72A79">
+      <File Id="FIL_Leadtools_WinForms_dll_99" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.WinForms.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Workflow_ImageProcessing_dll_100" Guid="DEC7D937-F3BD-4023-9E63-4C27F6126F34">
+      <File Id="FIL_Leadtools_Workflow_ImageProcessing_dll_100" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Workflow.ImageProcessing.dll" />
+    </Component>
+
+    <Component Id="CMP_Leadtools_Workflow_Raster_dll_101" Guid="6DBEEBF8-FFAD-4E56-92B7-89EC9964627D">
+      <File Id="FIL_Leadtools_Workflow_Raster_dll_101" KeyPath="yes" Source="$(var.ReleaseDir)\Leadtools.Workflow.Raster.dll" />
+    </Component>
+
+    <Component Id="CMP_LEADToolsHelper_dll_102" Guid="9EABB567-3149-434A-A861-1C00455441E7">
+      <File Id="FIL_LEADToolsHelper_dll_102" KeyPath="yes" Source="$(var.ReleaseDir)\LEADToolsHelper.dll" />
+    </Component>
+
+    <Component Id="CMP_log4net_dll_103" Guid="B1B49D3E-CA67-4967-9E0C-20CB5288AB64">
+      <File Id="FIL_log4net_dll_103" KeyPath="yes" Source="$(var.ReleaseDir)\log4net.dll" />
+    </Component>
+
+    <Component Id="CMP_log4net_xml_104" Guid="ECADBA30-B51D-4735-A0D3-2DEE26AD0F2C">
+      <File Id="FIL_log4net_xml_104" KeyPath="yes" Source="$(var.ReleaseDir)\log4net.xml" />
+    </Component>
+
+    <Component Id="CMP_MD5_schema_xml_105" Guid="229AE68C-8912-4519-AC26-BB77C3FE0A64">
+      <File Id="FIL_MD5_schema_xml_105" KeyPath="yes" Source="$(var.ReleaseDir)\MD5_schema.xml" />
+    </Component>
+
+    <Component Id="CMP_MediaInfo_dll_106" Guid="DA3F4C2D-1D0D-49FA-9846-64CA00AE45E6">
+      <File Id="FIL_MediaInfo_dll_106" KeyPath="yes" Source="$(var.ReleaseDir)\MediaInfo.dll" />
+    </Component>
+
+    <Component Id="CMP_Microsoft_Expression_Interactions_dll_107" Guid="4A1808DD-E123-4AB7-8858-1CEBA6639D2D">
+      <File Id="FIL_Microsoft_Expression_Interactions_dll_107" KeyPath="yes" Source="$(var.ReleaseDir)\Microsoft.Expression.Interactions.dll" />
+    </Component>
+
+    <Component Id="CMP_Microsoft_Practices_ServiceLocation_dll_108" Guid="6DCE167A-28DD-4017-AD00-C9272550ED75">
+      <File Id="FIL_Microsoft_Practices_ServiceLocation_dll_108" KeyPath="yes" Source="$(var.ReleaseDir)\Microsoft.Practices.ServiceLocation.dll" />
+    </Component>
+
+    <Component Id="CMP_Microsoft_Practices_ServiceLocation_xml_109" Guid="34E8F9D0-DC38-483D-B136-47E0BB18E760">
+      <File Id="FIL_Microsoft_Practices_ServiceLocation_xml_109" KeyPath="yes" Source="$(var.ReleaseDir)\Microsoft.Practices.ServiceLocation.xml" />
+    </Component>
+
+    <Component Id="CMP_NHibernate_dll_110" Guid="C7801EE3-BF98-40E7-B486-3302019E4A43">
+      <File Id="FIL_NHibernate_dll_110" KeyPath="yes" Source="$(var.ReleaseDir)\NHibernate.dll" />
+    </Component>
+
+    <Component Id="CMP_NHibernate_xml_111" Guid="B3D6AB13-49E9-4C4C-AD63-9C2C873608FF">
+      <File Id="FIL_NHibernate_xml_111" KeyPath="yes" Source="$(var.ReleaseDir)\NHibernate.xml" />
+    </Component>
+
+    <Component Id="CMP_QuickGraph_dll_112" Guid="8B904557-A6A0-4D4E-97BB-8B66AD2B9B5C">
+      <File Id="FIL_QuickGraph_dll_112" KeyPath="yes" Source="$(var.ReleaseDir)\QuickGraph.dll" />
+    </Component>
+
+    <Component Id="CMP_QuickGraph_xml_113" Guid="48A58982-6F97-44CD-8647-90D3A5D95BF0">
+      <File Id="FIL_QuickGraph_xml_113" KeyPath="yes" Source="$(var.ReleaseDir)\QuickGraph.xml" />
+    </Component>
+
+    <Component Id="CMP_Ra_Common_dll_114" Guid="B4DAFEA9-5DDD-4FC0-B58F-B8C54294D196">
+      <File Id="FIL_Ra_Common_dll_114" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.Common.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_Common_dll_config_115" Guid="80B5C07F-B30F-4DF2-A150-6712D042FCD7">
+      <File Id="FIL_Ra_Common_dll_config_115" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.Common.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ra_Common_Wpf_dll_116" Guid="66ED4630-D976-4F42-B353-49B37BE859E7">
+      <File Id="FIL_Ra_Common_Wpf_dll_116" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.Common.Wpf.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_Common_Wpf_dll_config_117" Guid="D4D693EC-C025-4442-B269-E979C0BC12BB">
+      <File Id="FIL_Ra_Common_Wpf_dll_config_117" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.Common.Wpf.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ra_DocumentInvestigator_dll_118" Guid="9FE9D742-292C-46F4-8B38-3750BB3965A6">
+      <File Id="FIL_Ra_DocumentInvestigator_dll_118" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.DocumentInvestigator.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_DocumentInvestigator_dll_config_119" Guid="EEFE82A0-30FC-46F1-81CD-72AEAD72C1FE">
+      <File Id="FIL_Ra_DocumentInvestigator_dll_config_119" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.DocumentInvestigator.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ra_DomainEntities_dll_120" Guid="4EFCAB5C-63FE-4D93-898E-F9C3324DD78B">
+      <File Id="FIL_Ra_DomainEntities_dll_120" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.DomainEntities.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_EntityExtensions_dll_121" Guid="2F498382-984E-47AF-88BB-79C44692D6D9">
+      <File Id="FIL_Ra_EntityExtensions_dll_121" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.EntityExtensions.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_EntityExtensions_dll_config_122" Guid="43DB53E9-F56A-4C88-B773-09E62AC96820">
+      <File Id="FIL_Ra_EntityExtensions_dll_config_122" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.EntityExtensions.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ra_EntityMappings_NHibernate_dll_123" Guid="275B097E-C1C4-4838-A857-470F3D355941">
+      <File Id="FIL_Ra_EntityMappings_NHibernate_dll_123" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.EntityMappings.NHibernate.dll" />
+    </Component>
+
+    <Component Id="CMP_Ra_EntityMappings_NHibernate_dll_config_124" Guid="C6375AF2-0025-4FC7-B158-35EB54551F36">
+      <File Id="FIL_Ra_EntityMappings_NHibernate_dll_config_124" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.EntityMappings.NHibernate.dll.config" />
+    </Component>
+
+    <Component Id="CMP_Ra_XmlEntities_dll_125" Guid="B543F554-DD4F-4999-89DB-DA47B05F4183">
+      <File Id="FIL_Ra_XmlEntities_dll_125" KeyPath="yes" Source="$(var.ReleaseDir)\Ra.XmlEntities.dll" />
+    </Component>
+
+    <Component Id="CMP_settings_xml_126" Guid="98B60018-AB68-45B2-986E-1F200C24A812">
+      <File Id="FIL_settings_xml_126" KeyPath="yes" Source="$(var.ReleaseDir)\settings.xml" />
+    </Component>
+
+    <Component Id="CMP_ShellBrowser_dll_127" Guid="AEFF9258-ABEB-4714-9162-B9BFF890C12F">
+      <File Id="FIL_ShellBrowser_dll_127" KeyPath="yes" Source="$(var.ReleaseDir)\ShellBrowser.dll" />
+    </Component>
+
+    <Component Id="CMP_SQLite_Interop_dll_128" Guid="120B111C-8E69-4452-A77E-A8A19496A61F">
+      <File Id="FIL_SQLite_Interop_dll_128" KeyPath="yes" Source="$(var.ReleaseDir)\SQLite.Interop.dll" />
+    </Component>
+
+    <Component Id="CMP_sqlite3_dll_129" Guid="23C5024C-7B94-4052-9AE4-2B0D81090729">
+      <File Id="FIL_sqlite3_dll_129" KeyPath="yes" Source="$(var.ReleaseDir)\sqlite3.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_dll_130" Guid="C64EC058-6AD3-4B40-82DD-97C069A2CEAE">
+      <File Id="FIL_System_Data_SQLite_dll_130" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_dll_config_131" Guid="E8C55C6D-AB80-4BD5-8978-677D4B576230">
+      <File Id="FIL_System_Data_SQLite_dll_config_131" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.dll.config" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_EF6_dll_132" Guid="D6F09078-26E8-486D-8A7C-EA216F42B313">
+      <File Id="FIL_System_Data_SQLite_EF6_dll_132" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.EF6.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_ExtraDlls_dll_133" Guid="BF419F59-DCF9-46E4-AB08-3422B3F6E2D5">
+      <File Id="FIL_System_Data_SQLite_ExtraDlls_dll_133" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.ExtraDlls.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_Linq_dll_134" Guid="DED49650-027F-49E7-8CC8-8F43E596F2A6">
+      <File Id="FIL_System_Data_SQLite_Linq_dll_134" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.Linq.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Data_SQLite_xml_135" Guid="FCC10893-1D1B-4232-B8B4-9D521409AFF7">
+      <File Id="FIL_System_Data_SQLite_xml_135" KeyPath="yes" Source="$(var.ReleaseDir)\System.Data.SQLite.xml" />
+    </Component>
+
+    <Component Id="CMP_System_ValueTuple_dll_136" Guid="2EE98B03-3E3A-49A6-8066-6712B3EF3730">
+      <File Id="FIL_System_ValueTuple_dll_136" KeyPath="yes" Source="$(var.ReleaseDir)\System.ValueTuple.dll" />
+    </Component>
+
+    <Component Id="CMP_System_Windows_Interactivity_dll_137" Guid="032645C2-FE4E-40E2-9F48-8631E32ECC4E">
+      <File Id="FIL_System_Windows_Interactivity_dll_137" KeyPath="yes" Source="$(var.ReleaseDir)\System.Windows.Interactivity.dll" />
+    </Component>
+
+    <Component Id="CMP_WpfAnimatedGif_dll_138" Guid="73386F89-11D7-4466-BBEA-5A3645544DCE">
+      <File Id="FIL_WpfAnimatedGif_dll_138" KeyPath="yes" Source="$(var.ReleaseDir)\WpfAnimatedGif.dll" />
+    </Component>
+
+    <Component Id="CMP_WpfAnimatedGif_xml_139" Guid="7CD9CD40-D13F-4A1D-9790-17B135786D74">
+      <File Id="FIL_WpfAnimatedGif_xml_139" KeyPath="yes" Source="$(var.ReleaseDir)\WpfAnimatedGif.xml" />
+    </Component>
+
+    <Component Id="CMP_WPFLocalizeExtension_dll_140" Guid="DB12BD5B-C8A8-458C-805E-A785450148E4">
+      <File Id="FIL_WPFLocalizeExtension_dll_140" KeyPath="yes" Source="$(var.ReleaseDir)\WPFLocalizeExtension.dll" />
+    </Component>
+
+    <Component Id="CMP_WPFLocalizeExtension_xml_141" Guid="FDA498B8-5705-4A58-A519-0DC23F865549">
+      <File Id="FIL_WPFLocalizeExtension_xml_141" KeyPath="yes" Source="$(var.ReleaseDir)\WPFLocalizeExtension.xml" />
+    </Component>
+
+    <Component Id="CMP_XAMLMarkupExtensions_dll_142" Guid="E63AECC7-2ABC-425B-AACB-E700A4F952D2">
+      <File Id="FIL_XAMLMarkupExtensions_dll_142" KeyPath="yes" Source="$(var.ReleaseDir)\XAMLMarkupExtensions.dll" />
+    </Component>
+
+    <Component Id="CMP_XAMLMarkupExtensions_xml_143" Guid="03DCC5E2-1C91-41DD-8FAA-2D817F729FB0">
+      <File Id="FIL_XAMLMarkupExtensions_xml_143" KeyPath="yes" Source="$(var.ReleaseDir)\XAMLMarkupExtensions.xml" />
+    </Component>
+
+    <Component Id="CMP_Ada_UI_Wpf_Text_resources_dll_144" Guid="A61DE4FC-5706-4A43-834C-5F5A51B85AB0">
+      <File Id="FIL_Ada_UI_Wpf_Text_resources_dll_144" KeyPath="yes" Source="$(var.ReleaseDir)\da-dk\Ada.UI.Wpf.Text.resources.dll" />
+    </Component>
+
+  </ComponentGroup>
+</Include>
