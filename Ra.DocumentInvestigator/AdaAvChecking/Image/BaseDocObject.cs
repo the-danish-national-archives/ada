@@ -70,11 +70,7 @@
         private uint? _pageCount;
 
         private RasterCodecs _rasterCodecs;
-        //            _imageTags ?? (_imageTags = RasterCodecs.ReadTags(
-        //                                                                     FileFullName
-        //            CurrentStreamFromZero
-        //            , _currentPage));
-
+  
         private RasterImage _rasterImg;
 
         public int RasterNo = 1;
@@ -103,38 +99,11 @@
 
             _currentStream = currentStream;
 
-            //            _rasterCodecs.Options.Load.Tags = true;
-
-            //            if (currentStream.IsBufferingPossible)
-            //            {
-            //                currentStream.Buffer();
-            ////                _rasterImg = RasterCodecs.Load(currentStream);
-            //            }
-            //            else
-            //            {
-            ////                _rasterCodecs.Options.Load.AllPages = false;
-            ////                _rasterCodecs.Options.Load.SuperCompressed = true;
-            ////                _rasterImg = currentStream.file != null && currentStream.file.Exists
-            ////                    ? RasterCodecs.Load(currentStream.file.FullName)
-            ////                    : RasterCodecs.Load(currentStream);
-            //            }
-
-
-            //            if ( != null)
-
-            //            ImageInfo = RasterCodecs.GetInformation(currentStream, true);
-
-            //            var raster
-            //            RasterCodecs; // = InitializeLeadTools();
-
-
             DocInfo = docInfo;
 
             FileFullName = currentStream.file.FullName;
 
             Name = Path.Combine(DocInfo.DocumentFolder, DocInfo.DocumentId, currentStream.file?.Name ?? "");
-
-            //            _log.Error($"BaseDoc({Name}");
 
             Callback = callback ?? (e => { });
         }
@@ -159,11 +128,7 @@
 
 
         protected string FileFullName { get; }
-        //        public abstract uint PageCount { get; }
-        //        public bool PrivateTagsFound { get; }
 
-        //        public LegalFileType FileType
-        //            => typeDetector.VerifyFiletypeByMagicNumberBasedOnExtension(_currentStream.file.FullName);
         public LegalFileType FileType
             => typeDetector.VerifyFiletypeByMagicNumberBasedOnExtension(FileFullName);
 
@@ -224,9 +189,7 @@
 
         public static bool JustPassedTreshold { get; set; }
 
-        //        public bool IsFirstPageBlank { get; }
-        //        public bool IsAnyOddDBI { get; }
-        //        public bool IsCompressionLegal { get; }
+
         public string Name { get; }
 
         // TODO A lot happens when pagecount is called (a wrapper steam might be introduced), find a better way when a property read to trigger that
@@ -380,40 +343,13 @@
             return ImageInfoFormat.ToString();
         }
 
-        //        protected CodecsImageInfo GetCodecsImageInfo(int page)
-        //        {
-        //            this._currentStream.KeepAlive = false;
-        //            this.ResetStream();
-        //
-        //            try
-        //            {
-        //                return this._codecs.GetInformation(this._currentStream, false, page);
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                throw new TiffPageReadException(page, this.Name);
-        //            }
-        //        }
 
-        //        private void ResetStream()
-        //        {
-        //            this._currentStream.Position = 0;
-        //        }
 
         protected RasterCodecs InitializeLeadTools()
         {
             // initialize the codecs object.
             try
             {
-                //                var path2License = Path.Combine(
-                //                    AppDomain.CurrentDomain.BaseDirectory,
-                //                    //GetExecutingDirectory().FullName,
-                //                    "Danish National Archives-IMGPRO18.lic");
-                //                this._log.DebugFormat("Path to license file '{0}'", path2License);
-                //                if (!File.Exists(path2License)) throw new FileNotFoundException();
-                //                RasterSupport.SetLicense(
-                //                    path2License,
-                //                    "5sxnXtxTqpbNbRPDAdE6k8WRWcBRLmQI9d2X3vtpgzOToLjYBmO312GYtXqhCnFE");
                 return new RasterCodecs();
             }
             catch (RasterException ex)
@@ -551,29 +487,6 @@
 
             EnsurePageNumber(sideNr);
 
-            //            bool found = false;
-            //
-            //            void ActionTag(object o, CodecsEnumTagsEventArgs a)
-            //            {
-            //                if (a.Id > copyRight)
-            //                    found = true;
-            //            }
-            //
-            //            var tagHandler = new EventHandler<CodecsEnumTagsEventArgs>(ActionTag);
-            //
-            //            RasterCodecs.TagFound += tagHandler;
-            //            RasterCodecs.EnumTags(
-            ////                FileFullName,
-            //                CurrentStreamFromZero,
-            //                sideNr);
-            //            RasterCodecs.TagFound -= tagHandler;
-            //            //            this.ResetStream();
-            //            ////            var tagList = this._codecs.ReadTags(this._currentStream, sideNr);
-            //            /// 
-            //            /// 
-            //            /// 
-            //                        return tagList.Any(tag => (tag.Id >= copyRight) && (tag.Id != copyRight));
-
 
             //            return found;
             return ImageTags.Any(t => t.Id > copyRight);
@@ -667,12 +580,7 @@
             try
             {
                 EnsurePageNumber(i);
-                //RasterCodecs.ThrowExceptionsOnInvalidImages = true;
-                /*RasterCodecs.Load(
-                    //                                                                     FileFullName
-                    CurrentStreamFromZero
-                    , _currentPage);*/
-
+     
                 PeriodicChecksOfMemory();
 
 
@@ -687,20 +595,6 @@
                 return null; //Fejl - uspecificeret
             }
         }
-
-        //        private RasterImage GetPage(int i)
-        //        {
-        //            int bpp;
-        //            const int bitDepth24 = 24;
-        //            const int bitDepthNative = 0;
-        //            using (var info = this._codecs.GetInformation(this._currentStream, false))
-        //            {
-        //                bpp = info.BitsPerPixel;
-        //            }
-        //            this._rasterImg = this._codecs.Load(this._currentStream, bpp == 12 ? bitDepth24 : bitDepthNative, 0, i, i);
-        //
-        //            return this._rasterImg;
-        //        }
 
         protected bool TestIfDPIIsOdd()
         {
@@ -727,21 +621,7 @@
         protected static bool VerifyCompressionByType(PageObject item)
         {
             return ValidCompressions.Contains(item.Compression);
-            //
-            //            switch (item.Compression)
-            //            {
-            //                case : //
-            //                case "CCITT GROUP 3 FAX":
-            //                case 
-            //                case :
-            //                    break;
-            //                case "NONE":
-            //                default:
-            //                {
-            //                    return false;
-            //                }
-            //            }
-            //            return true;
+
         }
 
         #endregion
