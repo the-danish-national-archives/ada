@@ -27,8 +27,6 @@
         public RasterImageViewerWrapper()
         {
             //Skal ske før InitializeComponent !!!
-            //RasterSupport.Unlock(RasterSupportType.PdfRead, ""); //Kræver plugin eller kode
-            //Leadtools.Codecs.RasterCodecs.Startup();
             codecs = new RasterCodecs();
 
             InitializeComponent();
@@ -42,8 +40,6 @@
             rasterImageViewer1.HorizontalAlignMode = RasterPaintAlignMode.Center;
             rasterImageViewer1.Location = new Point(0, 0);
             rasterImageViewer1.Name = "rasterImageViewer1";
-            //            this.rasterImageViewer1.Size = new System.Drawing.Size(513, 583);
-            //            this.rasterImageViewer1.TabIndex = 1;
             rasterImageViewer1.VerticalAlignMode = RasterPaintAlignMode.Center;
             rasterImageViewer1.MouseMove += (sender, args) => OnMouseMove(args);
             rasterImageViewer1.ScaleFactorChanged += (sender, args) => OnScaleFactorChanged(args);
